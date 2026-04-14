@@ -7,7 +7,6 @@ function Home() {
   return (
     <div className="font-sans">
 
-      {/* HERO */}
       <section
         className="h-[680px] bg-cover bg-center flex items-center justify-center"
         style={{
@@ -16,10 +15,8 @@ function Home() {
       >
       </section>
 
-      {/* DISCRIMINACIÓN */}
       <section className="relative bg-[#0979bb] text-white p-10 overflow-hidden">
 
-        {/* DECORACIÓN AZUL */}
         <img
           src={decoracionAzul}
           alt="decoración azul"
@@ -33,10 +30,8 @@ function Home() {
         </p>
       </section>
 
-      {/* ACOSO */}
       <section className="relative bg-[#bacf00] text-white p-10 overflow-hidden">
 
-        {/* DECORACIÓN VERDE */}
         <img
           src={decoracionVerde}
           alt="decoración verde"
@@ -51,7 +46,6 @@ function Home() {
         </p>
       </section>
 
-      {/* CARDS */}
       <section className="bg-[#1e3a5f] py-10 flex justify-center gap-6">
         <div className="w-40 h-24 rounded-xl bg-purple-400 flex items-center justify-center text-white shadow-lg hover:scale-105 transition">
           Ejemplo 1
@@ -61,7 +55,6 @@ function Home() {
         </div>
       </section>
 
-      {/* NO ES */}
       <section className="bg-[#b6d400] p-10">
         <h2 className="text-2xl font-bold mb-6">Esto NO es</h2>
         <div className="flex gap-6">
@@ -71,7 +64,6 @@ function Home() {
         </div>
       </section>
 
-      {/* SI ES */}
       <section className="bg-[#2b6ca3] text-white p-10">
         <h2 className="text-2xl font-bold mb-6">Esto SI es</h2>
         <div className="flex gap-6">
@@ -81,7 +73,6 @@ function Home() {
         </div>
       </section>
 
-      {/* INFO FINAL */}
       <section className="bg-[#1e3a5f] text-white p-10">
         <h3 className="text-xl font-bold mb-4">
           Causas por las que los trabajadores no denuncian
