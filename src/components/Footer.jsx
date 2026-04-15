@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-10">
+    <footer className="bg-gray-900 text-gray-300 ">
       <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
         {/* Marca */}
         <div>
