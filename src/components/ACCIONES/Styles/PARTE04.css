@@ -1,0 +1,167 @@
+/* --- Variables de Color (Mejoradas) --- */
+:root {
+  --bg-purple-dark: #663399; 
+  --card-purple-pale: #e0d7ee; 
+  --text-dark-blue: #0f172a; 
+  --accent-purple: #8b5cf6; 
+}
+
+/* --- Estilos Generales y Layout de la Sección --- */
+.avances-section-container {
+  display: flex;
+  min-height: 100vh; 
+  background-color: #a561ab;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  align-items: center; 
+  justify-content: center; 
+  overflow: hidden;
+}
+
+/* --- Estilos de la Tarjeta --- */
+.avances-card-wrapper {
+  background-color: #d9d9d9; 
+  padding: 60px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 20px; 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Fondo translúcido con efecto de vidrio */
+.avances-card-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -80px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+/* --- Encabezado --- */
+.avances-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #38bdf8; 
+  letter-spacing: 0.2rem; 
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: fadeInText 0.8s ease-out 0.2s forwards; 
+}
+
+.year-subtitle {
+  position: absolute !important;
+  top: 80px;  
+  right: 1040px;  
+  margin: 0 !important; 
+  font-weight: bold;
+}
+
+/* Línea estilizada debajo del título */
+.title-underline {
+  height: 4px;
+  width: 80px;
+  background-color: var(--accent-purple);
+  margin-top: 50px;
+  border-radius: 2px;
+  margin-right: 1000px;
+}
+
+/* --- Grid de Datos y Micro-interacciones --- */
+.avances-data-grid {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  width: 100%;
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 70px;}
+
+.avances-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Efecto de elevación al hover */
+.avances-item:hover {
+  transform: translateY(-10px);
+}
+
+/* Contenedor del Porcentaje */
+.percent-wrapper {
+  font-weight: 900;
+  font-size: 4.5rem;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--accent-purple);
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+/* Al hover, el porcentaje se rellena */
+.avances-item:hover .percent-wrapper {
+  color: var(--accent-purple);
+  -webkit-text-stroke: 2px transparent;
+}
+
+.percent-number {
+  font-size: 8.5rem;
+}
+
+.percent-symbol {
+  font-size: 3rem;
+  padding-bottom: 0.8rem;
+}
+
+/* Etiquetas de Texto */
+.avances-label {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-top: 15px;
+  font-size: 1rem;
+  max-width: 200px; 
+}
+
+/* --- Animación de Entrada para la Tarjeta --- */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .avances-card-wrapper {
+    padding: 40px;
+    clip-path: none;
+    width: 85%;
+
+  }
+  .avances-data-grid {
+    flex-direction: column !important;
+    gap: 40px;
+    align-items: center;
+  }
+
+}

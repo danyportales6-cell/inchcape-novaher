@@ -1,0 +1,177 @@
+:root {
+  --deep-blue: #1a2b3c;
+  --accent-blue: #38bdf8;
+  --vibrant-purple: #ffffff;
+  --text-gray: #94a3b8;
+}
+
+.training-section {
+  background-color: var(--deep-blue);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-family: 'Inter', sans-serif;
+}
+
+.training-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+/* --- ESTILO DE LA IMAGEN --- */
+.training-visual {
+  position: relative;
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.image-cutout {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  /* Corte diagonal moderno */
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.image-cutout img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-cutout:hover img {
+  transform: scale(1.1);
+}
+
+.image-overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.4), transparent);
+}
+
+/* --- CONTENIDO DERECHO --- */
+.subtitle-tag {
+  color: var(--accent-blue);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.training-title {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.items-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* TARJETAS DE ENTRENAMIENTO */
+.training-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: calc(var(--delay) * 0.2s + 0.5s);
+}
+
+.training-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateX(15px);
+  border-borderColor: var(--accent-blue);
+}
+
+.card-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--vibrant-purple);
+  transition: all 0.4s ease;
+}
+
+.training-card:hover .card-number {
+  color: var(--vibrant-purple);
+  transform: scale(1.1);
+}
+
+.card-body p {
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.hover-line {
+  width: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  margin-top: 8px;
+  transition: width 0.4s ease;
+}
+
+.training-card:hover .hover-line {
+  width: 100%;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .image-cutout {
+    height: 300px;
+  }
+  .training-title {
+    font-size: 2.5rem;
+  }
+}
