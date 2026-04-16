@@ -1,0 +1,159 @@
+.denuncia-section {
+  background: linear-gradient(135deg, #e6f3f7 0%, #e6f3f7 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.denuncia-container {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* --- Lado Visual (Imagen) --- */
+.denuncia-visual {
+  position: relative;
+}
+
+.image-frame {
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease;
+}
+
+.image-frame:hover {
+  transform: scale(1.02);
+}
+
+.image-frame img {
+  width: 100%;
+  display: block;
+}
+
+.accent-blob {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: rgba(30, 136, 229, 0.1);
+  top: -10%;
+  left: -10%;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  z-index: 1;
+  animation: blob-morph 8s infinite alternate;
+}
+
+/* --- Contenido --- */
+.denuncia-tag {
+  background: #001f3f;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.denuncia-main-title {
+  font-size: 3.5rem;
+  color: #001f3f;
+  line-height: 0.9;
+  margin: 15px 0;
+  font-weight: 900;
+}
+
+.denuncia-main-title span {
+  color: #1565c0;
+}
+
+.web-label-container {
+  margin: 20px 0;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #001f3f;
+}
+
+.denuncia-description {
+  color: #455a64;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  border-left: 4px solid #1565c0;
+  padding-left: 20px;
+}
+
+/* --- Botón Mejorado --- */
+.reporte-button {
+  display: inline-flex;
+  align-items: center;
+  background: #001f3f;
+  color: white !important;
+  text-decoration: none;
+  padding: 18px 35px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0, 31, 63, 0.3);
+}
+
+.reporte-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 31, 63, 0.4);
+  background: #003366;
+}
+
+.btn-icon {
+  margin-left: 15px;
+  transition: transform 0.3s ease;
+}
+
+.reporte-button:hover .btn-icon {
+  transform: translateX(8px);
+}
+
+/* --- Animaciones --- */
+@keyframes blob-morph {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  100% { border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%; }
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .denuncia-container { grid-template-columns: 1fr; text-align: center; }
+  .denuncia-description { border-left: none; padding-left: 0; }
+  .icon-circle { justify-content: center; }
+}

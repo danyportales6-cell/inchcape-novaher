@@ -1,26 +1,24 @@
 /* --- Variables de Color (Mejoradas) --- */
 :root {
   --bg-purple-dark: #663399; 
-  --card-purple-pale: #e0d7ee; 
+  --card-purple-pale: #ffffff; 
   --text-dark-blue: #0f172a; 
-  --accent-purple: #8b5cf6; 
+  --accent-purple: #c8ecfc; 
 }
 
 /* --- Estilos Generales y Layout de la Sección --- */
 .avances-section-container {
   display: flex;
   min-height: 100vh; 
-  background-color: #a561ab;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
+  /* Cambia este color al celeste claro que definiste en tu :root */
+  background-color: var(--accent-purple) !important; 
   align-items: center; 
   justify-content: center; 
-  overflow: hidden;
 }
 
 /* --- Estilos de la Tarjeta --- */
 .avances-card-wrapper {
-  background-color: #d9d9d9; 
+  background-color: #1a2b3c; 
   padding: 60px;
   width: 90%;
   max-width: 1400px;
@@ -47,28 +45,41 @@
 
 /* --- Encabezado --- */
 .avances-header {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+  width: 100%;          /* Asegura que el encabezado use todo el ancho */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea 2026, el Título y la Línea a la izquierda */
 }
 
 .main-title {
-  margin: 0;
-  font-size: 3rem;
-  font-weight: 800;
-  color: #38bdf8; 
-  letter-spacing: 0.2rem; 
-  margin-bottom: 60px;
-  opacity: 0;
-  animation: fadeInText 0.8s ease-out 0.2s forwards; 
+    background: transparent !important;
+    background-color: transparent !important;
+    display: inline-block; /* Evita que el fondo se extienda como bloque */
+    margin: 0;
+    padding: 0;
+    color: #ffffff ;
+    top: -10px;
+    left: 5px;
 }
-
+.fuentes{
+  position: absolute;
+  top: 490px;
+  font-size: 0.9cap;
+  color: #5c8ebf;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 .year-subtitle {
-  position: absolute !important;
-  top: 80px;  
-  right: 1040px;  
-  margin: 0 !important; 
+  position: relative !important; /* Cambiamos de absolute a relative */
+  display: block;                /* Asegura que ocupe su propia línea */
+  margin-bottom: 10px !important; 
   font-weight: bold;
+  font-size: 1.2rem;
+  color: #ffffff !important;
+  text-align: left;              /* Lo alinea a la izquierda */
+  width: 100%;                   /* Ocupa el ancho disponible */
 }
 
 /* Línea estilizada debajo del título */
@@ -76,7 +87,7 @@
   height: 4px;
   width: 80px;
   background-color: var(--accent-purple);
-  margin-top: 50px;
+  margin-top: 1px;
   border-radius: 2px;
   margin-right: 1000px;
 }
@@ -88,7 +99,7 @@
   justify-content: space-around;
   width: 100%;
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: 70px;}
 
 .avances-item {
@@ -121,7 +132,10 @@
 }
 
 .percent-number {
+  display: inline-block;
+  min-width: 8.5rem;
   font-size: 8.5rem;
+  text-align: right;
 }
 
 .percent-symbol {
@@ -131,7 +145,7 @@
 
 /* Etiquetas de Texto */
 .avances-label {
-  color: var(--text-dark);
+  color: #ffff;
   font-weight: 600;
   margin-top: 15px;
   font-size: 1rem;
@@ -142,7 +156,7 @@
 @keyframes fadeInSlideUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
