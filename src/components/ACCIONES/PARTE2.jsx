@@ -66,7 +66,7 @@ const PARTE2 = () => {
       <div className="left-panel">
         <h1 className="main-title">ACCIONES</h1>
         <div className="integrity-section">
-          <h2>ACCIONES</h2>
+          <h2>Historias que nos definen</h2>
           <blockquote className="testimonial">
             “ Soy una técnica de 26 años. En mi lugar de trabajo anterior me sentia excluida y discriminada. En Inchcape soy parte del equipo y me siento valorada y respetada. Somos extremadamente profesionales y también nos divertimos es un gran ambiente para trabajar. Nadie se siente amenazado ni intimidado.”
           </blockquote>

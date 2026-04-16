@@ -1,0 +1,118 @@
+/* Contenedor Principal (Fondo oscuro como tu imagen) */
+.taller-section-container {
+  background-color: #0f172a; /* Azul muy oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 100px 20px;
+}
+
+/* Tarjeta Celeste */
+.taller-card {
+  background-color: #cce5ff; /* Celeste claro */
+  width: 100%;
+  max-width: 1100px;
+  padding: 60px 40px;
+  position: relative;
+  border-radius: 4px; /* Bordes rectos según tu imagen */
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: slideInUp 1s ease-out forwards;
+}
+
+/* Título TALLER (Efecto de texto encima) */
+.taller-title-overlay {
+  position: absolute;
+  top: -65px; /* Lo sube para que sobresalga */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1.5rem;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.taller-card:hover .taller-title-overlay {
+  top: -55px;
+  text-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Descripción Central */
+.taller-description {
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Botón Negro con Efectos */
+.taller-pdf-button {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 50px; /* Bordes redondeados como tu imagen */
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de Brillo al pasar el mouse */
+.taller-pdf-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.taller-pdf-button:hover::after {
+  left: 100%;
+}
+
+.taller-pdf-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  background-color: #1a1a1a;
+}
+
+.taller-pdf-button:active {
+  transform: scale(0.95);
+}
+
+/* --- ANIMACIONES --- */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .taller-title-overlay {
+    font-size: 3rem;
+    top: -25px;
+  }
+  .taller-description {
+    font-size: 1.1rem;
+  }
+}
