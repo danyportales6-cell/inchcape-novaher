@@ -19,13 +19,13 @@ const PARTE6 = () => {
       id: 2,
       // imagen: imgSanciones,
       imagen: '/sanciones.jpg', // Placeholder temporal
-      titulo: 'SANCIÓNES',
+      titulo: 'SANCIONES',
     },
     {
       id: 3,
       // imagen: imgFinalizacion,
       imagen: '/terminar.jpg', // Placeholder temporal
-      titulo: 'FINALIZACION DE CONTRATOS',
+      titulo: 'FINALIZACIÓN DE CONTRATOS',
     },
   ];
 
