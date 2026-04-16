@@ -27,17 +27,17 @@
 
 .orientacion-title {
   color: #001F3F; /* Azul oscuro profundo */
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 800;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   letter-spacing: -1px;
 }
 
 .orientacion-subtitle {
   color: #333;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 800px;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  max-width: 1000px;
   font-weight: 500;
 }
 

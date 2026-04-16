@@ -41,7 +41,7 @@
   width: 100%;
   max-width: 450px; 
   height: 600px; 
-  background-color: #152C47; 
+  background-color: #071525; 
   border-radius: 250px 250px 0 0; 
   overflow: hidden; 
   position: relative;
@@ -115,8 +115,8 @@
 }
 
 .read-more-btn:hover {
-  background-color: #102a43;
-  color: #e6f3f7;
+  background-color: #489ceb;
+  color: #000b0e;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(16,42,67,0.3);
 }
