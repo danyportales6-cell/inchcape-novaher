@@ -1,26 +1,38 @@
+// ── hooks/useQuestionnaire.js ─────────────────────────────────────────────
+
 import { useState } from "react";
-import { INITIAL_QUESTION, FLOWS } from "../data/questionnaire";
+import {
+  QUESTIONS,
+  MIN_SCORE,
+  DIFF_SCORE,
+  RESULTS,
+} from "../data/questionnaire";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../services/firebase";
 
-const SCREEN = {
+export const SCREEN = {
   INTRO: "intro",
   QUESTION: "question",
   RESULT: "result",
 };
 
+function evaluateResult(scores) {
+  const { acoso, disc } = scores;
+  const top = Math.max(acoso, disc);
+  const diff = Math.abs(acoso - disc);
+  if (top < MIN_SCORE || diff < DIFF_SCORE) return "Caso ambiguo";
+  return acoso > disc ? "Acoso" : "Discriminación";
+}
+
 export function useQuestionnaire() {
   const [screen, setScreen] = useState(SCREEN.INTRO);
-  const [flowKey, setFlowKey] = useState(null); // "acoso" | "discriminacion"
-  const [stepIdx, setStepIdx] = useState(-1); // -1 = pregunta inicial
-  const [answers, setAnswers] = useState([]); // array de { id, value, score }
+  const [stepIdx, setStepIdx] = useState(0);
+  const [scores, setScores] = useState({ acoso: 0, disc: 0 });
   const [resultado, setResultado] = useState(null);
 
-  const currentQuestion =
-    stepIdx === -1 ? INITIAL_QUESTION : FLOWS[flowKey]?.questions[stepIdx];
-
-  const totalSteps = flowKey ? FLOWS[flowKey].questions.length : 1;
-  const progress = stepIdx === -1 ? 0 : ((stepIdx + 1) / totalSteps) * 100;
+  const currentQuestion = QUESTIONS[stepIdx];
+  const totalSteps = QUESTIONS.length;
+  const progress = Math.round((stepIdx / totalSteps) * 100);
 
   async function saveEvent(tipo) {
     try {
@@ -33,61 +45,39 @@ export function useQuestionnaire() {
     }
   }
 
-  function evaluateFlow(allAnswers, key) {
-    const flow = FLOWS[key];
-    const total = allAnswers.reduce((sum, a) => sum + (a.score ?? 0), 0);
-    return total >= flow.minScore ? flow.label : "Caso ambiguo";
-  }
-
   async function handleAnswer(option) {
-    // ── Pregunta inicial ──────────────────────────────────────────────────
-    if (stepIdx === -1) {
-      if (option.value === "ambiguo") {
-        await saveEvent("Caso ambiguo");
-        setResultado("Caso ambiguo");
-        setScreen(SCREEN.RESULT);
-        return;
-      }
-      setFlowKey(option.value);
-      setStepIdx(0);
-      setScreen(SCREEN.QUESTION);
-      return;
-    }
+    const newScores = {
+      acoso: scores.acoso + (option.scores?.acoso ?? 0),
+      disc: scores.disc + (option.scores?.disc ?? 0),
+    };
+    setScores(newScores);
 
-    // ── Flujo de preguntas ────────────────────────────────────────────────
-    const newAnswers = [...answers, { id: currentQuestion.id, ...option }];
-    setAnswers(newAnswers);
-
-    const isLast = stepIdx === FLOWS[flowKey].questions.length - 1;
+    const isLast = stepIdx === QUESTIONS.length - 1;
 
     if (!isLast) {
       setStepIdx((i) => i + 1);
       return;
     }
 
-    // Última pregunta → evaluar
-    const res = evaluateFlow(newAnswers, flowKey);
+    const res = evaluateResult(newScores);
     await saveEvent(res);
-    setResultado(res);
+    setResultado({ key: res, scores: newScores, data: RESULTS[res] });
     setScreen(SCREEN.RESULT);
   }
 
   function reset() {
     setScreen(SCREEN.INTRO);
-    setFlowKey(null);
-    setStepIdx(-1);
-    setAnswers([]);
+    setStepIdx(0);
+    setScores({ acoso: 0, disc: 0 });
     setResultado(null);
   }
 
   function startQuestionnaire() {
-    setStepIdx(-1);
     setScreen(SCREEN.QUESTION);
   }
 
   return {
     screen,
-    SCREEN,
     currentQuestion,
     progress,
     stepIdx,
