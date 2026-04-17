@@ -1,17 +1,24 @@
 @import "tailwindcss";
 
-/* 🔥 ANIMACIÓN */
-@keyframes fadeIn {
-  from {
+@keyframes slideHero {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateX(-80px);
+    filter: blur(6px);
   }
-  to {
+  60% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(10px);
+    filter: blur(0);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 1.2s ease-out;
+.animate-slideHero {
+  animation: slideHero 1.8s ease-out;
+}
+.clip-triangle {
+  clip-path: polygon(0% 0, 100% 0, 100% 100%, 40% 100%);
 }

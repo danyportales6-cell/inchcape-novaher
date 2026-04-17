@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function Carousel({ items, bgColor, textSide = "left" }) {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const sectionRef = useRef(null);
 
   const next = () => {
@@ -13,7 +15,6 @@ function Carousel({ items, bgColor, textSide = "left" }) {
     setIndex((prev) => (prev - 1 + items.length) % items.length);
   };
 
-  // 🎮 teclado
   useEffect(() => {
     const handleKey = (e) => {
       if (e.key === "ArrowRight") next();
@@ -23,37 +24,42 @@ function Carousel({ items, bgColor, textSide = "left" }) {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  // 👀 animación SOLO cuando entra en pantalla
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
+        if (entry.isIntersecting) setVisible(true);
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className={`${bgColor} p-12 overflow-hidden h-[550px] flex items-center relative`}
+      className={`${bgColor} p-12 overflow-hidden h-[570px] flex items-center relative`}
     >
-      <div className="flex justify-between items-center w-full">
+      <div className="flex justify-between w-full h-full items-center">
 
         {/* TEXTO IZQUIERDA */}
         {textSide === "left" && (
           <div
-            className={`transition-all duration-700 ${
-              visible ? "translate-x-0 opacity-100" : "-translate-x-24 opacity-0"
-            }`}
+            style={{
+              transform: `translateY(${scrollY * 0.05}px)`
+            }}
+            className={`flex flex-col justify-center h-full max-w-[300px] transition-all duration-1000 ${visible
+                ? "translate-x-0 opacity-100"
+                : "-translate-x-32 opacity-0"
+              }`}
           >
             <h2 className="text-6xl font-bold">
               Esto <span className="text-white">NO</span> es
@@ -64,18 +70,18 @@ function Carousel({ items, bgColor, textSide = "left" }) {
         )}
 
         {/* CARRUSEL */}
-        <div className="flex gap-6 items-end">
+        <div className="flex gap-6 items-center">
           {items.map((item, i) => {
             const position = (i - index + items.length) % items.length;
 
-            let size = "w-44 h-60 opacity-40";
+            let size = "w-44 h-60 opacity-40 scale-90";
             let active = false;
 
             if (position === 0) {
-              size = "w-64 h-80 opacity-100";
+              size = "w-64 h-80 opacity-100 scale-100";
               active = true;
             } else if (position === 1 || position === items.length - 1) {
-              size = "w-52 h-72 opacity-70";
+              size = "w-52 h-72 opacity-70 scale-95";
             }
 
             return (
@@ -83,9 +89,11 @@ function Carousel({ items, bgColor, textSide = "left" }) {
 
                 {/* IMAGEN */}
                 <div
-                  className={`${size} bg-white overflow-hidden rounded-t-full transition-all duration-500 ${
-                    active ? "translate-y-[-15px]" : ""
-                  }`}
+                  className={`${size} bg-white overflow-hidden rounded-t-full transition-all duration-700 ease-in-out`}
+                  style={{
+                    transform: active ? "translateY(-15px)" : "translateY(0px)",
+                    transition: active ? "transform 0.7s ease" : "none"
+                  }}
                 >
                   <img
                     src={item.img}
@@ -108,9 +116,13 @@ function Carousel({ items, bgColor, textSide = "left" }) {
         {/* TEXTO DERECHA */}
         {textSide === "right" && (
           <div
-            className={`text-right transition-all duration-700 ${
-              visible ? "translate-x-0 opacity-100" : "translate-x-24 opacity-0"
-            }`}
+            style={{
+              transform: `translateY(${scrollY * 0.05}px)`
+            }}
+            className={`flex flex-col justify-center items-end text-right h-full max-w-[300px] transition-all duration-1000 ${visible
+                ? "translate-x-0 opacity-100"
+                : "translate-x-32 opacity-0"
+              }`}
           >
             <h2 className="text-6xl font-bold">
               Esto <span className="text-white">SI</span> es
@@ -122,12 +134,21 @@ function Carousel({ items, bgColor, textSide = "left" }) {
       </div>
 
       {/* BOTONES */}
-      <div className="absolute right-12 bottom-6 flex gap-3">
-        <button onClick={prev} className="bg-black/30 text-white px-4 py-2">
-          ←
+      <div
+        className={`absolute bottom-6 flex gap-3 ${textSide === "right" ? "left-12" : "right-12"
+          }`}
+      >
+        <button
+          onClick={prev}
+          className="bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition"
+        >
+          <ChevronLeft size={20} />
         </button>
-        <button onClick={next} className="bg-black/30 text-white px-4 py-2">
-          →
+        <button
+          onClick={next}
+          className="bg-black/30 hover:bg-black/50 text-white p-3 rounded-full transition"
+        >
+          <ChevronRight size={20} />
         </button>
       </div>
     </section>
