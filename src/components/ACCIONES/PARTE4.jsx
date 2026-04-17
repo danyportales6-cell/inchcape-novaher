@@ -7,19 +7,27 @@ const CountUpItem = ({ targetValue, label }) => {
   const elementRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
-    // Definimos el observador para saber cuándo el elemento entra en pantalla
+useEffect(() => {
+    // Si ya animó, no hacemos nada más.
+    if (hasAnimated) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
-        // Si el elemento es visible y no ha animado aún, empezamos
-        if (entry.isIntersecting && !hasAnimated) {
+        
+        // Reducimos el umbral al 10% (0.1) para que sea más sensible
+        if (entry.isIntersecting) {
+          console.log(`Disparando contador para: ${label}`); // <-- Agrega este log para depurar
           startCounting();
-          setHasAnimated(true); // Evitamos que anime múltiples veces
-          observer.unobserve(entry.target); // Dejamos de observar
+          setHasAnimated(true);
+          // Importante: Dejar de observar inmediatamente
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.5 } // Necesitamos que el 50% sea visible
+      { 
+        threshold: 0.1, // <-- CAMBIO CLAVE: Más sensible a la entrada
+        rootMargin: "0px 0px -50px 0px" // Opcional: dispara un poco antes de que entre
+      }
     );
 
     if (elementRef.current) {
@@ -31,23 +39,29 @@ const CountUpItem = ({ targetValue, label }) => {
         observer.unobserve(elementRef.current);
       }
     };
-  }, [hasAnimated]);
+    // Quitamos 'hasAnimated' de las dependencias para evitar bucles extraños
+  }, []);
 
-  // Lógica de la animación del contador
-  const startCounting = () => {
-    let start = 0;
-    const duration = 2000; // Duración de la animación en milisegundos
-    const increment = Math.ceil(targetValue / (duration / 10)); // Incremento por frame
+const startCounting = () => {
+    let currentCount = 0; // Usamos una variable local, no el estado directamente
+    const duration = 2000; // 2 segundos
+    const frameRate = 1000 / 60; // Intentamos 60fps (~16.6ms) para máxima suavidad
+    const totalFrames = duration / frameRate;
+    const increment = targetValue / totalFrames;
+
+    console.log(`Iniciando contador: Objetivo ${targetValue}, Incremento ${increment}/frame`);
 
     const counterInterval = setInterval(() => {
-      start += increment;
-      if (start >= targetValue) {
-        setCount(targetValue); // Nos aseguramos de llegar al valor exacto
+      currentCount += increment;
+      
+      if (currentCount >= targetValue) {
+        setCount(targetValue); // Valor final exacto
         clearInterval(counterInterval);
       } else {
-        setCount(start);
+        // Importante: Math.floor aquí para ver el progreso de enteros
+        setCount(Math.floor(currentCount)); 
       }
-    }, 10); // Actualización cada 10ms para suavidad
+    }, frameRate);
   };
 
   return (
@@ -65,9 +79,9 @@ const CountUpItem = ({ targetValue, label }) => {
 const PARTE4 = () => {
   // Datos sacados de tu imagen
   const data = [
-    { value: 33, label: 'Puesto de liderazgo' },
-    { value: 20, label: 'Reducción de acoso y discriminación' },
-    { value: 26, label: 'Contrataciones' },
+    { value: 33, label: 'Mujeres en puesto de liderazgo' },
+    { value: 28, label: 'Representación Femenina en la fuerza laboral' },
+    { value: 26, label: 'Contrataciones de mujeres en Inchcape' },
   ];
 
   return (
@@ -76,8 +90,9 @@ const PARTE4 = () => {
         
         {/* Encabezado */}
         <header className="avances-header">
-          <h2 className="main-title">Avances</h2>
-          <span className="year-subtitle">2026</span>
+          <h2 className="main-title">Avances de Inchcape</h2>
+          <span className="year-subtitle">2025/2026 ~</span>
+          <h3 className='fuentes'>CÓDIGO DE CONDUCTA/INCHCAPE</h3>
           <div className="title-underline"></div>
         </header>
 
