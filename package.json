@@ -10,10 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@tailwindcss/vite": "^4.2.2",
     "firebase": "^12.12.0",
     "framer-motion": "^12.38.0",
     "jspdf": "^4.2.1",
+=======
+    "lucide-react": "^1.8.0",
+>>>>>>> daniela
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.14.0",
