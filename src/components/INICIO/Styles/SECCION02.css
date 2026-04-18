@@ -1,0 +1,114 @@
+/* TarjetasInteractivas.css */
+
+.contenedor-seccion-tarjetas {
+  padding: 160px 5vw;
+  background-color: #e2eeff;
+  text-align: center;
+}
+
+.titulo-seccion-cards {
+  color: #1a2c4e;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+.grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- La Tarjeta Mágica --- */
+.tarjeta-expandible {
+  position: relative;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden; /* Clave para ocultar el contenido extra */
+  background-color: #1a2c4e;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.tarjeta-expandible:hover {
+  transform: translateY(-10px);
+}
+
+/* Imagen y Gradiente */
+.contenedor-imagen-card {
+  width: 100%;
+  height: 100%;
+}
+
+.imagen-card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  opacity: 0.8;
+}
+
+.tarjeta-expandible:hover .imagen-card {
+  transform: scale(1.1); /* Efecto de zoom sutil */
+  opacity: 0.6;
+}
+
+.capa-gradiente {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(26, 44, 78, 0.9) 10%, transparent 60%);
+}
+
+/* Contenido que sube */
+.contenido-card {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: left;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.titulo-card {
+  color: #d1e9ff;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+/* Oculto inicialmente */
+.detalles-expandibles {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.descripcion-card {
+  color: #e2e8f0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+
+/* --- ESTADO HOVER: El despliegue --- */
+.tarjeta-expandible:hover .detalles-expandibles {
+  max-height: 200px; /* Suficiente para el texto */
+  opacity: 1;
+  margin-top: 10px;
+}
+
+.tarjeta-expandible:hover .contenido-card {
+  background: rgba(26, 44, 78, 0.8); /* Oscurece el fondo al expandir */
+  backdrop-filter: blur(5px); /* Efecto de cristal esmerilado */
+}
