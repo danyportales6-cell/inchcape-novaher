@@ -5,15 +5,6 @@ import apoyo1 from "../assets/img/Apoyo1.png";
 import apoyo2 from "../assets/img/Apoyo2.png";
 import apoyo3 from "../assets/img/Apoyo3.png";
 import apoyo4 from "../assets/img/Apoyo4.png";
-import fondo1 from "../assets/img/Fondo1.jpg";
-
-// ─── DESIGN TOKENS ───────────────────────────────────────────────────────────
-// #152C47  Azul   — fondo principal, cards, overlay
-// #15BDE6  Celeste — acento primario, badges, barras, botones info
-// #BACF00  Verde  — CTA principal, progreso, highlight títulos
-// #A561AB  Lila   — acento secundario, resultados, CTA contacto
-// #D9D9D9  Gris   — texto base, bordes, superficies sutiles
-// ─────────────────────────────────────────────────────────────────────────────
 
 function ProgressBar({ progress, step, total }) {
   return (

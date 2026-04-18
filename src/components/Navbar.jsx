@@ -1,52 +1,73 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const linkStyle = ({ isActive }) =>
+    `block py-2 transition ${
+      isActive
+        ? "text-cyan-400 border-b-2 border-cyan-400"
+        : "hover:text-cyan-300"
+    }`;
+
   return (
-    <nav className="bg-gray-900 text-white px-6 py-4 flex justify-between items-center shadow-md">
-      {/* Logo */}
-      <h1 className="text-xl font-bold tracking-wide">Respeto</h1>
+    <nav className="bg-gray-900 text-white px-4 py-3 shadow-md">
+      <div className="flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-28 h-8 object-contain sm:w-36 sm:h-10"
+          />
+        </Link>
 
-      {/* Links */}
-      <div className="flex gap-6">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `transition ${
-              isActive
-                ? "text-cyan-400 border-b-2 border-cyan-400"
-                : "hover:text-cyan-300"
-            }`
-          }
+        {/* Botón hamburguesa (solo móvil) */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="sm:hidden text-white text-2xl"
         >
-          Inicio
-        </NavLink>
+          ☰
+        </button>
 
-        <NavLink
-          to="/acciones"
-          className={({ isActive }) =>
-            `transition ${
-              isActive
-                ? "text-cyan-400 border-b-2 border-cyan-400"
-                : "hover:text-cyan-300"
-            }`
-          }
-        >
-          Acciones
-        </NavLink>
-
-        <NavLink
-          to="/reportar"
-          className={({ isActive }) =>
-            `transition ${
-              isActive
-                ? "text-cyan-400 border-b-2 border-cyan-400"
-                : "hover:text-cyan-300"
-            }`
-          }
-        >
-          Reportar
-        </NavLink>
+        {/* Links desktop */}
+        <div className="hidden sm:flex gap-6">
+          <NavLink to="/" className={linkStyle}>
+            Inicio
+          </NavLink>
+          <NavLink to="/acciones" className={linkStyle}>
+            Acciones
+          </NavLink>
+          <NavLink to="/reportar" className={linkStyle}>
+            Reportar
+          </NavLink>
+        </div>
       </div>
+
+      {/* Menú móvil desplegable */}
+      {open && (
+        <div className="flex flex-col mt-4 sm:hidden">
+          <NavLink to="/" className={linkStyle} onClick={() => setOpen(false)}>
+            Inicio
+          </NavLink>
+          <NavLink
+            to="/acciones"
+            className={linkStyle}
+            onClick={() => setOpen(false)}
+          >
+            Acciones
+          </NavLink>
+          <NavLink
+            to="/reportar"
+            className={linkStyle}
+            onClick={() => setOpen(false)}
+          >
+            Reportar
+          </NavLink>
+        </div>
+      )}
     </nav>
   );
 }
