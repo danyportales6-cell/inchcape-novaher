@@ -5,14 +5,14 @@ function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
 
-      {/* TOP */}
+      
       <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-3">
 
-        {/* COLUMNA 1: Logo + redes */}
+        
         <div className="flex flex-col items-start gap-4 ">
 
           <img
-            src={logo} // 👈 cambia por tu ruta real
+            src={logo} 
             alt="Logo"
             className="w-60"
           />
@@ -40,7 +40,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* COLUMNA 2: Navegación (lo que ya tenías) */}
+      
         <div>
           <h3 className="text-white font-semibold mb-3">Navegación</h3>
           <ul className="space-y-2 text-sm">
@@ -52,7 +52,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* COLUMNA 3: Dirección + mapa */}
+        
         <div>
           <h3 className="text-white font-semibold mb-3">Ubicación</h3>
 
@@ -72,11 +72,10 @@ function Footer() {
         </div>
       </div>
 
-      {/* BOTTOM */}
+      
       <div className="border-t border-gray-700 py-6 px-6">
         <div className="max-w-7xl mx-auto flex flex-col gap-4 items-center text-sm">
 
-          {/* Links legales */}
           <div className="flex flex-wrap justify-center gap-8">
             <a href="https://www.inchcape.com/es-co/site-services/cookie-policy" className="hover:text-cyan-400">Cookies</a>
             <a href="https://www.inchcape.com/es-co/site-services/politica-de-privacidad" className="hover:text-cyan-400">Politica de Privacidad</a>
@@ -84,7 +83,6 @@ function Footer() {
             <a href="https://www.inchcape.com/es-co/site-services/accesibilidad">Accesibilidad</a>
           </div>
 
-          {/* Copyright */}
           <p className="text-gray-500 text-center">
             © 2026 Respeto en la industria. Todos los derechos reservados.
           </p>
