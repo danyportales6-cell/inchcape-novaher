@@ -3,6 +3,7 @@ import MainLayout from "./Layouts/MainLayout";
 import Home from "./pages/Home";
 import Actions from "./pages/Actions";
 import ReportCases from "./pages/ReportCases";
+import TRIVIA from "./components/INICIO/TRIVIA/";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/acciones" element={<Actions />} />
           <Route path="/reportar" element={<ReportCases />} />
+          <Route path="/TRIVIA" element={<TRIVIA />} />
         </Route>
       </Routes>
     </BrowserRouter>

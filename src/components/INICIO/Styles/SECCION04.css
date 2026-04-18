@@ -1,0 +1,122 @@
+/* CasosSinReportar.css */
+
+.seccion-casos-root {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 50px 0;
+  
+  /* MEJORA: Reutilizamos el fondo azul oscuro corporativo con trama de las secciones anteriores */
+  background-color: #0d2137; /* Azul oscuro corporativo base */
+}
+
+/* La Capa de fondo con trama de hexágonos sutiles */
+.capa-fondo-trama {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%231a2c4e" fill-opacity="0.15" fill-rule="nonzero"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34L25 30.6V17.9l-11.01-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.31zm0 18.55L12.98 41v8h-2v-6.85L0 36.24v-2.31zm14.02 0L27 36.24v-2.31l-12.98-7.5v2.31zm0-18.55L27 12.69v-2.31L14.02 7.5v2.31z"/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  z-index: 1;
+}
+
+/* La Tarjeta Central (Azul muy claro) */
+.tarjeta-estadistica {
+  background-color: #dbeaff; /* El azul muy claro de fondo de la imagen */
+  width: 90%;
+  max-width: 1100px; /* Ancho máximo para pantallas grandes */
+  border-radius: 10px; /* Bordes redondeados sutiles de la imagen */
+  padding: 60px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* Encabezado */
+.encabezado-tarjeta {
+  text-align: left;
+  margin-bottom: 70px;
+  max-width: 70%;
+}
+
+.titulo-tarjeta {
+  color: #0d2137; /* El azul oscuro del texto corporativo */
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+.subtitulo-tarjeta {
+  color: #5180a3; /* Azul medio */
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 5px;
+}
+
+/* Grid de los 3 Datos */
+.contenedor-datos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 50px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.bloque-dato-individual {
+  text-align: center;
+}
+
+.porcentaje-grande {
+  color: #1a2c4e; /* El azul oscuro corporativo */
+  font-size: clamp(5rem, 10vw, 8rem); /* Texto responsivo muy grande */
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.descripcion-dato {
+  color:  #5180a3;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin: 0;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Pie de tarjeta */
+.pie-tarjeta {
+  border-top: 1px solid rgba(26, 44, 78, 0.1);
+  padding-top: 20px;
+  text-align: left;
+}
+
+.pie-tarjeta p {
+  color: #7ebbea; /* Azul medio */
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Responsivo para móvil */
+@media (max-width: 768px) {
+  .tarjeta-estadistica {
+    padding: 30px;
+  }
+  .encabezado-tarjeta {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  .contenedor-datos-grid {
+    grid-template-columns: 1fr; /* Colapso a una sola columna */
+    gap: 40px;
+  }
+}

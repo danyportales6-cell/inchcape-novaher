@@ -1,0 +1,140 @@
+.seccion-trivia-root {
+  min-height: 100vh;
+  background-color: #0d2137;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.trivia-container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.trivia-titulo {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.trivia-instruccion {
+  color: #1d7ac2;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.card-pregunta {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.texto-pregunta {
+  font-size: 1.4rem;
+  color: #1a2c4e;
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.opciones-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.boton-opcion {
+  padding: 15px 25px;
+  border: 2px solid #1d7ac2;
+  border-radius: 10px;
+  background: transparent;
+  color: #1d7ac2;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-opcion:hover:not(:disabled) {
+  background: #1d7ac2;
+  color: white;
+}
+
+.boton-opcion.ganador {
+  background: #28a745 !important;
+  border-color: #28a745 !important;
+  color: white !important;
+}
+
+.feedback-texto {
+  margin-top: 25px;
+  font-weight: 600;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.feedback-texto.correcto { color: #28a745; background: #e8f5e9; }
+.feedback-texto.error { color: #dc3545; background: #ffebee; }
+
+.progreso-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progreso-relleno {
+  height: 100%;
+  background: #1d7ac2;
+  transition: width 0.4s ease;
+}
+
+/* Resultado Final */
+.trivia-resultado {
+  text-align: center;
+  color: white;
+}
+
+.puntuacion {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1d7ac2;
+}
+
+.boton-reiniciar {
+  background: #1d7ac2;
+  color: rgb(198, 219, 255);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.boton-volver-home{
+    background: #1d7ac2;
+  color: rgb(198, 219, 255);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.titulo-final{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    color: #ddf0ff;
+}
