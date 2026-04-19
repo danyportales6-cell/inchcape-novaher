@@ -3,15 +3,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Tipografía limpia y profesional */
+  font-family: "Poppins", sans-serif; /* Tipografía limpia y profesional */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   /* Fondo de la página con el patrón de rejilla sutil de la imagen */
   background-color: #e6f3f7;
-  background-image: linear-gradient(#cfe6ee 1px, transparent 1px),
-                    linear-gradient(90deg, #cfe6ee 1px, transparent 1px);
-  background-size: 50px 50px; 
+  background-image:
+    linear-gradient(#cfe6ee 1px, transparent 1px),
+    linear-gradient(90deg, #cfe6ee 1px, transparent 1px);
+  background-size: 50px 50px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -24,14 +25,14 @@
   display: flex;
   max-width: 1200px;
   width: 100%;
-  background: transparent; 
-  align-items: center; 
-  gap: 60px; 
+  background: transparent;
+  align-items: center;
+  gap: 60px;
 }
 
 /* --- Lado Izquierdo: Contenedor de Imagen --- */
 .profile-image-container {
-  flex: 0 0 45%; 
+  flex: 0 0 45%;
   display: flex;
   justify-content: center;
 }
@@ -39,13 +40,13 @@
 /* Arco */
 .arched-cutout {
   width: 100%;
-  max-width: 450px; 
-  height: 600px; 
-  background-color: #071525; 
-  border-radius: 250px 250px 0 0; 
-  overflow: hidden; 
+  max-width: 450px;
+  height: 600px;
+  background-color: #071525;
+  border-radius: 250px 250px 0 0;
+  overflow: hidden;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* p.inchcape*/
@@ -53,7 +54,7 @@
   width: 90%;
   height: auto;
   position: absolute;
-  bottom: 0; 
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   display: block;
@@ -66,19 +67,17 @@
   padding-right: 40px;
 }
 
-
 .profile-name {
-  font-size: 4rem; 
+  font-size: 4rem;
   font-weight: 700;
   margin: 0 0 10px 0;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
   cursor: pointer;
 }
 
 .profile-name:hover {
-  color: #00a3e0; 
+  color: #00a3e0;
 }
-
 
 .profile-title {
   font-size: 1.5rem;
@@ -86,7 +85,6 @@
   margin: 0 0 40px 0;
   opacity: 0.9;
 }
-
 
 .profile-quote {
   margin: 0;
@@ -98,7 +96,7 @@
   line-height: 1.6;
   font-weight: 400;
   margin-bottom: 40px;
-  color: #243b53; 
+  color: #243b53;
 }
 
 /* boton*/
@@ -111,14 +109,14 @@
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .read-more-btn:hover {
   background-color: #489ceb;
   color: #000b0e;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(16,42,67,0.3);
+  box-shadow: 0 5px 15px rgba(16, 42, 67, 0.3);
 }
 
 /* Animación de entrada */
@@ -129,8 +127,8 @@
 /* Animación de entrada para el texto */
 .animate-fade-in-right {
   animation: fadeInRight 1s ease-out forwards;
-  animation-delay: 0.3s; 
-  opacity: 0; 
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
 @keyframes fadeInLeft {
@@ -162,15 +160,15 @@
     text-align: center;
     gap: 40px;
   }
-  
+
   .arched-cutout {
-    height: 400px; 
+    height: 400px;
   }
 
   .profile-name {
     font-size: 3rem;
   }
-  
+
   .profile-text-container {
     padding-right: 0;
   }

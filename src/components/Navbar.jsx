@@ -4,6 +4,34 @@ import logo from "../assets/logo.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+
+  const linkStyle = ({ isActive }) =>
+    `block py-2 transition ${
+      isActive
+        ? "text-cyan-400 border-b-2 border-cyan-400"
+        : "hover:text-cyan-300"
+    }`;
+
+  return (
+    <nav className="fixed top-0 left-0 w-full bg-gray-900 text-white px-4 py-3 shadow-md z-50">
+      <div className="flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-28 h-8 object-contain sm:w-36 sm:h-10"
+          />
+        </Link>
+
+        {/* Botón hamburguesa (solo móvil) */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="sm:hidden text-white text-2xl"
+        >
+          ☰
+        </button>
+
   const linkStyle = ({ isActive }) =>
     `block py-2 transition ${
       isActive
@@ -36,6 +64,7 @@ function Navbar() {
             Inicio
           </NavLink>
           <NavLink to="/acciones" className={linkStyle}>
+            Acciones
             informandonos
           </NavLink>
           <NavLink to="/reportar" className={linkStyle}>

@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import SECCION1 from "../components/INICIO/SECCION1";
+import SECCION2 from "../components/INICIO/SECCION2";
+import SECCION3 from "../components/INICIO/SECCION3";
+import SECCION4 from "../components/INICIO/SECCION4";
+import SECCION5 from "../components/INICIO/SECCION5";
+
+function Home() {
+
+  return (
+    <div  style={{ 
 import PARTE1 from "../components/ACCIONES/PARTE1";
 import PARTE2 from "../components/ACCIONES/PARTE2";
 import PARTE3 from "../components/ACCIONES/PARTE3";
@@ -20,6 +29,10 @@ function Home () {
       backgroundColor: '#f0f8ff' 
     }}>
       <SECCION1 />
+      <SECCION2/>
+      <SECCION3/>
+      <SECCION4/>
+      <SECCION5/>
       <PARTE1/>
       <PARTE2 />
       <PARTE3/>
@@ -29,7 +42,7 @@ function Home () {
       <PARTE7/>
       <PARTE8/>
     </div>
-  );
+  )
 }
 
 

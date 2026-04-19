@@ -1,29 +1,29 @@
 /* --- Variables de Color (Mejoradas) --- */
 :root {
-  --bg-purple-dark: #663399; 
-  --card-purple-pale: #ffffff; 
-  --text-dark-blue: #0f172a; 
-  --accent-purple: #c8ecfc; 
+  --bg-purple-dark: #663399;
+  --card-purple-pale: #ffffff;
+  --text-dark-blue: #0f172a;
+  --accent-purple: #c8ecfc;
 }
 
 /* --- Estilos Generales y Layout de la Sección --- */
 .avances-section-container {
   display: flex;
-  min-height: 100vh; 
+  min-height: 100vh;
   /* Cambia este color al celeste claro que definiste en tu :root */
-  background-color: var(--accent-purple) !important; 
-  align-items: center; 
-  justify-content: center; 
+  background-color: var(--accent-purple) !important;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- Estilos de la Tarjeta --- */
 .avances-card-wrapper {
-  background-color: #1a2b3c; 
+  background-color: #1a2b3c;
   padding: 60px;
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
-  border-radius: 20px; 
+  border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
 
 /* Fondo translúcido con efecto de vidrio */
 .avances-card-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50px;
   left: -80px;
@@ -48,38 +48,38 @@
   position: relative;
   z-index: 1;
   margin-bottom: 40px;
-  width: 100%;          /* Asegura que el encabezado use todo el ancho */
+  width: 100%; /* Asegura que el encabezado use todo el ancho */
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Alinea 2026, el Título y la Línea a la izquierda */
 }
 
 .main-title {
-    background: transparent !important;
-    background-color: transparent !important;
-    display: inline-block; /* Evita que el fondo se extienda como bloque */
-    margin: 0;
-    padding: 0;
-    color: #ffffff ;
-    top: -10px;
-    left: 5px;
+  background: transparent !important;
+  background-color: transparent !important;
+  display: inline-block; /* Evita que el fondo se extienda como bloque */
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  top: -10px;
+  left: 5px;
 }
-.fuentes{
+.fuentes {
   position: absolute;
   top: 490px;
   font-size: 0.9cap;
   color: #5c8ebf;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .year-subtitle {
   position: relative !important; /* Cambiamos de absolute a relative */
-  display: block;                /* Asegura que ocupe su propia línea */
-  margin-bottom: 10px !important; 
+  display: block; /* Asegura que ocupe su propia línea */
+  margin-bottom: 10px !important;
   font-weight: bold;
   font-size: 1.2rem;
   color: #ffffff !important;
-  text-align: left;              /* Lo alinea a la izquierda */
-  width: 100%;                   /* Ocupa el ancho disponible */
+  text-align: left; /* Lo alinea a la izquierda */
+  width: 100%; /* Ocupa el ancho disponible */
 }
 
 /* Línea estilizada debajo del título */
@@ -95,12 +95,13 @@
 /* --- Grid de Datos y Micro-interacciones --- */
 .avances-data-grid {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: space-around;
   width: 100%;
   gap: 30px;
   margin-top: 50px;
-  margin-bottom: 70px;}
+  margin-bottom: 70px;
+}
 
 .avances-item {
   flex: 1;
@@ -149,7 +150,7 @@
   font-weight: 600;
   margin-top: 15px;
   font-size: 1rem;
-  max-width: 200px; 
+  max-width: 200px;
 }
 
 /* --- Animación de Entrada para la Tarjeta --- */
@@ -170,12 +171,10 @@
     padding: 40px;
     clip-path: none;
     width: 85%;
-
   }
   .avances-data-grid {
     flex-direction: column !important;
     gap: 40px;
     align-items: center;
   }
-
 }

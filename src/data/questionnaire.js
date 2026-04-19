@@ -1,5 +1,7 @@
 // ── data/questionnaire.js ─────────────────────────────────────────────────
 
+import { label } from "framer-motion/client";
+
 export const QUESTIONS = [
   {
     id: "frecuencia",
@@ -13,7 +15,7 @@ export const QUESTIONS = [
         label: "Ocurre constantemente",
         desc: "Pasa casi todos los días o varias veces por semana. Ya anticipas que va a ocurrir.",
         eg: "Ejemplo: tu jefe hace comentarios sobre tu apariencia cada mañana.",
-        scores: { acoso: 2, disc: 1 },
+        scores: { acoso: 2, disc: 2 },
       },
       {
         label: "Ha pasado varias veces",
@@ -41,7 +43,7 @@ export const QUESTIONS = [
         label: "Mi jefe o supervisor directo",
         desc: "Alguien que tiene autoridad formal sobre tu trabajo, evaluaciones o permanencia en la empresa.",
         eg: "Ejemplo: gerente de área, supervisor de turno, coordinador de equipo.",
-        scores: { acoso: 2, disc: 1 },
+        scores: { acoso: 2, disc: 2 },
       },
       {
         label: "Un compañero/a de trabajo",
@@ -97,7 +99,7 @@ export const QUESTIONS = [
         label: "Comentarios, burlas o insultos",
         desc: "Palabras con carga sexual, sobre tu apariencia, o que refuerzan estereotipos de género.",
         eg: "Ejemplo: 'qué buena estás hoy' de forma reiterada, o 'los de tu país son todos iguales'.",
-        scores: { acoso: 1, disc: 1 },
+        scores: { acoso: 1, disc: 2 },
       },
       {
         label: "Contacto físico no deseado",

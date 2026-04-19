@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Actions from "./pages/Actions";
 import ReportCases from "./pages/ReportCases";
 import TRIVIA from "./components/INICIO/TRIVIA/";
+import "./index.css";
 
 function App() {
   return (
