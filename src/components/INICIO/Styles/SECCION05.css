@@ -19,38 +19,41 @@
 }
 
 .titulo-identificar {
-  color: #39bbfd; /* Blanco verdoso sutil con resplandor */
-  font-size: 5rem;
-  font-weight: 900;
+  position: absolute;
+  top: -15px; /* Lo sube para que sobresalga */
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0;
-  letter-spacing: 5px;
-  text-shadow: 0 0 15px rgb(229, 233, 238);
-  transform: translate(0px, -150px);
-  padding-top: 150px;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1.5rem;
+  text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transition: all 0.4s ease;
 }
 
 .texto-identificar {
-  color: #c1e6ff;
+  color:  #dbeaff;
   font-size: 1.5rem;
-  font-weight: 600;
-  margin: 7px 0 40px 0;
-  transform: translate(0px, -90px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
 
 .boton-trivia-link {
-  display: inline-block;
-  background: linear-gradient(90deg, #7acfe6 0%, #0072ff 100%);
-  color: rgb(33, 49, 97);
-  text-decoration: none;
-  padding: 19px 180px;
-  border-radius: 12px;
-  font-weight: 800;
-  font-size: 1.2rem;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  transform: translate(0px, -70px);
+  background-color: #fff9f9;
+  color: #32275b;
+  padding: 10px 200px;
+  border: none;
+  border-radius: 50px; /* Bordes redondeados como tu imagen */
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
 }
 
 .boton-trivia-link:hover {
