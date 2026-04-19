@@ -23,7 +23,7 @@ const PARTE7 = () => {
     },
     {
       id: 1,
-      title: "RECURSOS/HUMANOS",
+      title: "RR.HH.",
       icon: "/RH.png",
       shortDesc: "Encargada del bienestar y relaciones laborales.",
       longDesc:

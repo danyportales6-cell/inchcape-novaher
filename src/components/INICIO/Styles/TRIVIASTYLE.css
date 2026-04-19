@@ -1,122 +1,115 @@
+/* ===== ROOT ===== */
 .seccion-trivia-root {
   min-height: 100vh;
   background-color: #0d2137;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+
+  padding: 20px; /* base móvil */
 }
 
+/* ===== CONTENEDOR ===== */
 .trivia-container {
   max-width: 800px;
   width: 100%;
   text-align: center;
 }
 
+/* ===== TÍTULOS ===== */
 .trivia-titulo {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 800;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .trivia-instruccion {
   color: #1d7ac2;
   font-weight: 600;
-  margin-bottom: 40px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
 }
 
+/* ===== CARD ===== */
 .card-pregunta {
   background: white;
-  padding: 40px;
-  border-radius: 20px;
+  padding: 25px;
+  border-radius: 16px;
+
   width: 100%;
-  max-width: 800px;
-  
-  /* CAMBIO CLAVE: Quitamos cualquier 'height' fijo y usamos flex */
-  min-height: 350px; /* Altura mínima, pero puede crecer */
+  min-height: 260px;
+
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el contenido verticalmente */
+  justify-content: center;
   align-items: center;
-  gap: 20px; /* Espacio automático entre pregunta, botones y feedback */
-  position: relative;
+  gap: 15px;
 }
 
+/* ===== TEXTO ===== */
 .texto-pregunta {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   color: #1a2c4e;
   font-weight: 700;
-  margin-bottom: 10px;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
+/* ===== OPCIONES ===== */
 .opciones-container {
   display: flex;
-  gap: 20px;
-  margin: 20px 0; /* Asegura espacio arriba y abajo de los botones */
-  flex-wrap: wrap; /* Por si los botones son muy grandes en móvil */
-  justify-content: center;
+  flex-direction: column; /* 🔥 móvil primero */
+  gap: 10px;
+  width: 100%;
 }
 
 .boton-opcion {
-  padding: 15px 25px;
+  width: 100%;
+  padding: 12px;
+
   border: 2px solid #1d7ac2;
   border-radius: 10px;
   background: transparent;
   color: #1d7ac2;
+
   font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.boton-opcion:hover:not(:disabled) {
-  background: #1d7ac2;
+/* estado ganador */
+.boton-opcion.ganador {
+  background: #28a745;
+  border-color: #28a745;
   color: white;
 }
 
-.boton-opcion.ganador {
-  background: #28a745 !important;
-  border-color: #28a745 !important;
-  color: white !important;
-}
-
+/* ===== FEEDBACK ===== */
 .feedback-texto {
-  position: relative; /* Asegúrate de que NO sea absolute */
   margin-top: 10px;
-  padding: 15px 20px;
+  padding: 12px;
   border-radius: 10px;
-  line-height: 1.5;
-  text-align: center;
+  line-height: 1.4;
   width: 100%;
-  
-  /* Esto evita que el texto choque visualmente */
-  background-color: rgba(0, 0, 0, 0.05); 
+
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .feedback-texto.correcto {
   color: #28a745;
   background: #e8f5e9;
 }
-.feedback-texto.error {
-  color: #dc3545;
-  background: #ffebee;
-}
-.feedback-texto.correcto {
-  color: #28a745;
-  background: #e8f5e9;
-}
+
 .feedback-texto.error {
   color: #dc3545;
   background: #ffebee;
 }
 
+/* ===== PROGRESO ===== */
 .progreso-bar {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background: rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.1);
-  margin-top: 30px;
+  margin-top: 20px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -127,45 +120,112 @@
   transition: width 0.4s ease;
 }
 
-/* Resultado Final */
+/* ===== RESULTADO ===== */
 .trivia-resultado {
   text-align: center;
   color: white;
 }
 
 .puntuacion {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #1d7ac2;
-  margin-bottom: 30px;
-}
-
-.boton-reiniciar {
-  background: #1d7ac2;
-  color: rgb(198, 219, 255);
-  border: none;
-  padding: 25px 30px;
-  border-radius: 50px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.boton-volver-home {
-  background: #1d7ac2;
-  color: rgb(198, 219, 255);
-  border: none;
-  padding: 15px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 20px;
-  margin-left: 30px;
+  margin-bottom: 20px;
 }
 
 .titulo-final {
-  font-family: "Poppins", sans-serif;
-  font-size: 30px;
+  font-size: 1.4rem;
   color: #ddf0ff;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+}
+
+/* ===== BOTONES ===== */
+.boton-reiniciar,
+.boton-volver-home {
+  width: 100%;
+  padding: 14px;
+  border-radius: 50px;
+  border: none;
+
+  background: #1d7ac2;
+  color: rgb(198, 219, 255);
+
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 768px) {
+  .seccion-trivia-root {
+    padding: 40px;
+  }
+
+  .trivia-titulo {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+
+  .texto-pregunta {
+    font-size: 1.3rem;
+  }
+
+  .opciones-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .boton-opcion {
+    width: auto;
+    padding: 15px 25px;
+  }
+
+  .puntuacion {
+    font-size: 2.5rem;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .trivia-titulo {
+    font-size: 2.5rem;
+  }
+
+  .trivia-instruccion {
+    font-size: 1.1rem;
+  }
+
+  .card-pregunta {
+    padding: 40px;
+    min-height: 350px;
+  }
+
+  .texto-pregunta {
+    font-size: 1.4rem;
+  }
+
+  .progreso-bar {
+    height: 8px;
+    margin-top: 30px;
+  }
+
+  .puntuacion {
+    font-size: 3rem;
+  }
+
+  .boton-reiniciar,
+  .boton-volver-home {
+    width: auto;
+    padding: 15px 30px;
+  }
+
+  .boton-volver-home {
+    margin-left: 20px;
+  }
+
+  /* hover solo desktop */
+  .boton-opcion:hover:not(:disabled) {
+    background: #1d7ac2;
+    color: white;
+  }
 }

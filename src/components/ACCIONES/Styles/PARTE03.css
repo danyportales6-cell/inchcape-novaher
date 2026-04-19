@@ -5,143 +5,101 @@
   --text-gray: #94a3b8;
 }
 
+/* ===== BASE (MÓVIL PRIMERO) ===== */
 .training-section {
   background-color: var(--deep-blue);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: 20px;
   font-family: "Poppins", sans-serif;
 }
 
 .training-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  max-width: 1200px;
+  grid-template-columns: 1fr; /* 🔥 una columna móvil */
+  gap: 30px;
   width: 100%;
-  align-items: center;
 }
 
+/* ===== IMAGEN ===== */
 .training-visual {
   position: relative;
-  animation: slideInLeft 1s ease-out forwards;
+  animation: slideInLeft 0.8s ease-out forwards;
 }
 
 .image-cutout {
-  position: relative;
   width: 100%;
-  height: 500px;
+  height: 250px; /* 🔥 más pequeño en móvil */
   clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .image-cutout img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
 
-.image-cutout:hover img {
-  transform: scale(1.1);
-}
-
-.image-overlay-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(15, 23, 42, 0.4), transparent);
-}
-
-/* --- CONTENIDO DERECHO --- */
+/* ===== TEXTO ===== */
 .subtitle-tag {
   color: var(--accent-blue);
   font-weight: 700;
-  letter-spacing: 3px;
-  font-size: 0.8rem;
-  display: block;
-  margin-bottom: 10px;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  margin-bottom: 8px;
 }
 
 .training-title {
   color: white;
-  font-size: 3.5rem;
+  font-size: 2rem; /* 🔥 más pequeño móvil */
   font-weight: 900;
-  margin-top: 0;
-  margin-bottom: 50px;
-  text-transform: uppercase;
+  margin-bottom: 25px;
 }
 
+/* ===== CARDS ===== */
 .items-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
-/* TARJETAS DE ENTRENAMIENTO */
 .training-card {
   display: flex;
-  align-items: center;
-  gap: 30px;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: 0;
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: calc(var(--delay) * 0.2s + 0.5s);
-}
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px;
 
-.training-card:hover {
-  background: rgba(255, 255, 255, 0.07);
-  transform: translateX(15px);
-  border-color: var(--accent-blue);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: calc(var(--delay) * 0.15s);
 }
 
 .card-number {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--vibrant-purple);
-  transition: all 0.4s ease;
-}
-
-.training-card:hover .card-number {
-  color: var(--vibrant-purple);
-  transform: scale(1.1);
+  -webkit-text-stroke: 1px var(--vibrant-purple);
 }
 
 .card-body p {
   color: white;
-  font-size: 1.15rem;
-  font-weight: 500;
+  font-size: 0.95rem;
   margin: 0;
   line-height: 1.4;
 }
 
-.hover-line {
-  width: 0;
-  height: 2px;
-  background: var(--accent-blue);
-  margin-top: 8px;
-  transition: width 0.4s ease;
-}
-
-.training-card:hover .hover-line {
-  width: 100%;
-}
-
-/* --- ANIMACIONES --- */
+/* ===== ANIMACIONES ===== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -152,7 +110,7 @@
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
@@ -160,16 +118,72 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ===== TABLET ===== */
+@media (min-width: 768px) {
   .training-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 900px;
   }
+
   .image-cutout {
-    height: 300px;
+    height: 350px;
   }
+
   .training-title {
+    font-size: 2.8rem;
+  }
+
+  .card-number {
     font-size: 2.5rem;
+  }
+
+  .card-body p {
+    font-size: 1.05rem;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .training-grid {
+    max-width: 1200px;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .image-cutout {
+    height: 500px;
+  }
+
+  .training-title {
+    font-size: 3.5rem;
+  }
+
+  /* 🔥 HOVER solo en desktop */
+  .training-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .training-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(15px);
+    border-color: var(--accent-blue);
+  }
+
+  .training-card:hover .card-number {
+    color: var(--vibrant-purple);
+    transform: scale(1.1);
+  }
+
+  .hover-line {
+    width: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    margin-top: 8px;
+    transition: width 0.4s ease;
+  }
+
+  .training-card:hover .hover-line {
+    width: 100%;
   }
 }

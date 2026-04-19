@@ -1,19 +1,24 @@
 /* =========================================
-   PARTE 5: Sección Orientación - Estilos Globales
+   PARTE 5: Sección Orientación - Mobile First
    ========================================= */
+
+/* =========================================
+   BASE (Mobile: < 768px)
+   ========================================= */
+
 .orientacion-section {
-  background-color: #e3f2fd; /* Azul muy claro de fondo (como la imagen) */
-  padding: 190px 20px;
+  background-color: #e3f2fd;
+  padding: 60px 16px;
   width: 100%;
-  min-height: 80vh; /* Asegura que ocupe buena parte de la pantalla */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Poppins", sans-serif; /* O la fuente que uses en tu proyecto */
+  font-family: "Poppins", sans-serif;
 }
 
 .orientacion-container {
-  max-width: 1200px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
 }
@@ -21,23 +26,24 @@
 /* --- Encabezado --- */
 .orientacion-header {
   text-align: left;
-  margin-bottom: 50px;
-  padding-left: 20px;
+  margin-bottom: 32px;
+  padding-left: 4px;
 }
 
 .orientacion-title {
-  color: #001f3f; /* Azul oscuro profundo */
-  font-size: 4rem;
+  color: #001f3f;
+  font-size: 2.2rem;
   font-weight: 800;
-  margin-bottom: 35px;
-  letter-spacing: -1px;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 .orientacion-subtitle {
   color: #333;
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 1.7;
-  max-width: 1000px;
+  max-width: 100%;
   font-weight: 500;
 }
 
@@ -46,37 +52,39 @@
    ========================================= */
 .carousel-view-window {
   width: 100%;
-  overflow: hidden; /* Oculta las tarjetas que no están activas */
-  padding: 20px 0;
+  overflow: hidden;
+  padding: 12px 0;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.7s ease-in-out; /* Animación suave de deslizamiento */
+  transition: transform 0.7s ease-in-out;
   width: 100%;
 }
 
+/* En mobile, cada slide ocupa el 100% */
 .carousel-slide-dual {
-  flex: 0 0 50%; /* Cada slide ocupa el 100% del contenedor visible */
+  flex: 0 0 100%;
   width: 100%;
   display: flex;
-  justify-content: center; /* Centra la tarjeta dentro del slide */
+  justify-content: center;
   align-items: center;
-  padding: 0 20px; /* Pequeño espacio lateral */
+  padding: 0 8px;
 }
 
 /* =========================================
-   Estilo de la Tarjeta y Efecto Revelar
+   Estilo de la Tarjeta
    ========================================= */
 .orientacion-card {
-  background-color: #001226; /* Azul casi negro */
-  width: 400px; /* Ancho fijo para la tarjeta central */
-  height: 450px; /* Altura fija para que el efecto sea controlado */
+  background-color: #001226;
+  width: 100%;
+  max-width: 340px;
+  height: 380px;
   border-radius: 12px;
   position: relative;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Importante para que el contenido que sube esté oculto al principio */
+  overflow: hidden;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition:
@@ -84,9 +92,8 @@
     box-shadow 0.3s ease;
 }
 
-/* Efecto hover ligero en la tarjeta entera */
 .orientacion-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -99,9 +106,9 @@
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centrado vertical */
+  justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 28px 24px;
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
@@ -110,17 +117,17 @@
 
 .card-icon-img,
 .card-icon-emoji {
-  width: 80px;
-  height: 80px;
-  font-size: 5rem; /* Para emojis */
-  margin-bottom: 25px;
+  width: 64px;
+  height: 64px;
+  font-size: 4rem;
+  margin-bottom: 20px;
   color: #fff;
   object-fit: contain;
 }
 
 .card-title-front {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   text-align: center;
   margin: 0;
@@ -133,33 +140,33 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 100%; /* Empieza totalmente abajo, fuera de vista */
+  top: 100%;
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* El texto se alinea abajo */
-  padding: 40px;
-  transition: top 0.5s cubic-bezier(0.19, 1, 0.22, 1); /* Animación de subida suave */
+  justify-content: flex-end;
+  padding: 28px 24px;
+  transition: top 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 1;
 }
 
 .card-title-back {
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-transform: uppercase;
 }
 
 .card-short-desc {
   color: #ccc;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.5;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .more-info-btn {
-  background-color: #3498db; /* Color azul llamativo */
+  background-color: #3498db;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -167,62 +174,72 @@
   font-size: 0.9rem;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 8px;
   transition: background 0.3s ease;
+  /* Área táctil suficiente en mobile */
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
 .more-info-btn:hover {
   background-color: #fff;
+  color: #001226;
 }
 
-/* --- Lógica de la clase .revealed --- */
-/* Cuando la tarjeta está revelada, el front se desvanece y sube un poco */
+/* --- Clase .revealed --- */
 .orientacion-card.revealed .card-front {
   opacity: 0;
   transform: translateY(-20px);
-  pointer-events: none; /* No se puede clicar mientras está oculto */
+  pointer-events: none;
 }
 
-/* Y el back sube hasta ocupar todo el espacio */
 .orientacion-card.revealed .card-back {
-  top: 0; /* Sube completamente */
+  top: 0;
 }
 
 /* =========================================
-   Indicadores de Carrusel (Puntos Modernos)
+   Indicadores de Carrusel
    ========================================= */
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .indicator-dot {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background-color: #90a4ae; /* Gris azulado por defecto */
+  background-color: #90a4ae;
   border: none;
   cursor: pointer;
   padding: 0;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+  /* Área táctil suficiente */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-clip: content-box;
+  padding: 16px;
+  box-sizing: content-box;
 }
 
 .indicator-dot:hover {
   background-color: #546e7a;
 }
 
-/* Estilo para el punto activo (tarjeta actual) */
 .indicator-dot.active {
-  background-color: #001f3f; /* Azul oscuro */
-  transform: scale(1.3); /* Se agranda un poco */
+  background-color: #001f3f;
+  transform: scale(1.3);
 }
 
 /* =========================================
-   Panel Extra (Modal) - Estilos y Animación
+   Modal
    ========================================= */
 .modal-overlay {
   position: fixed;
@@ -230,35 +247,43 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Por encima de todo */
-  backdrop-filter: blur(3px); /* Ligero desenfoque de fondo */
+  align-items: flex-end; /* En mobile el modal sube desde abajo */
+  z-index: 1000;
+  backdrop-filter: blur(3px);
 }
 
 .modal-content {
   background-color: #fff;
-  width: 500px;
-  max-width: 90%;
-  border-radius: 12px;
-  padding: 40px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px 16px 0 0; /* Esquinas solo arriba en mobile */
+  padding: 32px 24px 40px;
   position: relative;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 .modal-close-btn {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 14px;
+  right: 16px;
   background: none;
   border: none;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #999;
   cursor: pointer;
-  padding: 0;
+  padding: 4px;
   line-height: 1;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
 }
 
 .modal-close-btn:hover {
@@ -268,35 +293,35 @@
 .modal-header {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
   border-bottom: 1px solid #eee;
 }
 
 .modal-icon-emoji {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .modal-icon-img {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
 }
 
 .modal-title {
   color: #001f3f;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
 }
 
 .modal-body {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .modal-body p {
   color: #555;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.7;
   margin: 0;
 }
@@ -309,12 +334,15 @@
   background-color: #001f3f;
   color: #fff;
   border: none;
-  padding: 12px 24px;
+  padding: 13px 24px;
   border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  min-height: 48px;
+  touch-action: manipulation;
+  width: 100%; /* Full width en mobile */
 }
 
 .modal-action-btn:hover {
@@ -322,10 +350,8 @@
 }
 
 /* =========================================
-   Animaciones Keyframes (Mejoras Visuales)
+   Animaciones
    ========================================= */
-
-/* Entrada suave desde arriba */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -341,11 +367,10 @@
   animation: fadeInDown 0.8s ease-out;
 }
 
-/* Aparición del Modal (Pop in) */
 @keyframes popIn {
   0% {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   100% {
     opacity: 1;
@@ -353,6 +378,178 @@
   }
 }
 
+/* En mobile, el modal sube desde abajo */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-pop-in {
-  animation: popIn 0.3s ease-out;
+  animation: slideUp 0.35s ease-out;
+}
+
+/* =========================================
+   TABLET (768px - 1023px)
+   ========================================= */
+@media (min-width: 768px) {
+  .orientacion-section {
+    padding: 100px 32px;
+  }
+
+  .orientacion-title {
+    font-size: 3rem;
+    letter-spacing: -0.8px;
+    margin-bottom: 24px;
+  }
+
+  .orientacion-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .orientacion-header {
+    margin-bottom: 40px;
+    padding-left: 12px;
+  }
+
+  /* En tablet mostramos 2 slides a la vez */
+  .carousel-slide-dual {
+    flex: 0 0 50%;
+    padding: 0 16px;
+  }
+
+  .orientacion-card {
+    width: 320px;
+    height: 420px;
+    max-width: 320px;
+  }
+
+  .card-icon-img,
+  .card-icon-emoji {
+    width: 72px;
+    height: 72px;
+    font-size: 4.5rem;
+  }
+
+  .card-title-front {
+    font-size: 1.8rem;
+  }
+
+  .card-front {
+    padding: 32px;
+  }
+
+  .card-back {
+    padding: 32px;
+  }
+
+  /* Modal centrado en tablet */
+  .modal-overlay {
+    align-items: center;
+  }
+
+  .modal-content {
+    width: 480px;
+    max-width: 90%;
+    border-radius: 12px;
+    padding: 36px;
+    max-height: 80vh;
+  }
+
+  .modal-action-btn {
+    width: auto;
+  }
+
+  .animate-pop-in {
+    animation: popIn 0.3s ease-out;
+  }
+}
+
+/* =========================================
+   DESKTOP (1024px+)
+   ========================================= */
+@media (min-width: 1024px) {
+  .orientacion-section {
+    padding: 190px 20px;
+    min-height: 80vh;
+  }
+
+  .orientacion-container {
+    max-width: 1200px;
+  }
+
+  .orientacion-header {
+    margin-bottom: 50px;
+    padding-left: 20px;
+  }
+
+  .orientacion-title {
+    font-size: 4rem;
+    letter-spacing: -1px;
+    margin-bottom: 35px;
+  }
+
+  .orientacion-subtitle {
+    font-size: 1.4rem;
+    max-width: 1000px;
+  }
+
+  .carousel-slide-dual {
+    flex: 0 0 50%;
+    padding: 0 20px;
+  }
+
+  .orientacion-card {
+    width: 400px;
+    height: 450px;
+    max-width: 400px;
+  }
+
+  .card-icon-img,
+  .card-icon-emoji {
+    width: 80px;
+    height: 80px;
+    font-size: 5rem;
+    margin-bottom: 25px;
+  }
+
+  .card-title-front {
+    font-size: 2rem;
+  }
+
+  .card-front {
+    padding: 40px;
+  }
+
+  .card-back {
+    padding: 40px;
+  }
+
+  .card-title-back {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .card-short-desc {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .modal-content {
+    width: 500px;
+    padding: 40px;
+  }
+
+  .modal-title {
+    font-size: 2rem;
+  }
+
+  .modal-body p {
+    font-size: 1.1rem;
+  }
 }

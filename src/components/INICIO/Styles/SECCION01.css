@@ -1,9 +1,6 @@
-/* PortadaInchcapeImpacto.css */
-
-/* Reset básico para asegurar que ocupe todo */
-body,
-html {
-body, html {
+/* ===== RESET ===== */
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -12,134 +9,150 @@ body, html {
   overflow-x: hidden;
 }
 
+/* ===== CONTENEDOR ===== */
 .portada-hero-container {
   display: flex;
   flex-direction: column;
-  height: 98vh;
-  width: 100vw;
-  font-family: "Poppins", sans-serif; /* Tipografía más moderna y limpia */
+  min-height: 100vh;
+  width: 100%;
   position: relative;
-  overflow: relative; /* Importante para el gráfico de fondo */
+  overflow: hidden;
 
-  /* MEJORA 1: Fondo con degradado sutil */
-  /* Reemplaza el color plano por un degradado para dar profundidad */
-  background: radial-gradient(circle at center, #e2f4fa 0%, #e2eeff 100%);
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Tipografía más moderna y limpia */
-  position: relative;
-  overflow: relative; /* Importante para el gráfico de fondo */
-  
-  /* MEJORA 1: Fondo con degradado sutil */
-  /* Reemplaza el color plano por un degradado para dar profundidad */
-  background: radial-gradient(circle at center,  #e6f3f7 0%, #e6f3f7 100%);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  background: radial-gradient(circle at center, #e6f3f7 0%, #e6f3f7 100%);
 }
-/* --- Sección del Título --- */
+
+/* ===== TÍTULO ===== */
 .seccion-titulo-principal {
-  flex: 0 0 auto; /* No se estira */
   text-align: center;
-  padding-top: 15vh; /* Más espacio desde arriba para impacto */
-  position: relative;
-  z-index: 10; /* Asegura que el texto esté por encima del gráfico */
+  padding-top: 10vh;
+  z-index: 10;
 }
 
+/* SUBTÍTULO */
 .portada-super-titulo {
-  color: #1a2c4e; /* Azul oscuro corporativo */
-  font-size: 4rem; /* Tamaño más grande y audaz */
-  font-weight: 800; /* Peso extra bold */
-  letter-spacing: 0.15em; /* Más espaciado para un aire 'premium' */
+  color: #1a2c4e;
+  font-size: 1.8rem; /* móvil */
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.1em;
-  line-height: 1.1;
-  /* MEJORA 2: Sombra de texto sutil para profundidad */
+  margin-bottom: 0.2em;
+  line-height: 1.2;
+
   text-shadow: 2px 2px 5px rgba(26, 44, 78, 0.1);
 }
 
+/* TÍTULO PRINCIPAL */
 .portada-titulo-foco {
-  color: #000000; /* Azul medio de la línea, para contraste */
-  font-size: 7.5rem; /* El título más grande */
-  font-weight: 900; /* Peso máximo */
-  letter-spacing: -0.01em;
+  font-size: 2.8rem; /* móvil */
+  font-weight: 900;
   text-transform: uppercase;
-  margin-top: 0;
   line-height: 1.1;
-  /* MEJORA 3: Un toque de gradiente en el texto */
+  margin: 0;
+
   background: linear-gradient(135deg, #4eaaf0 0%, #499fe4 100%);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;
 }
 
-/* --- Sección del Gráfico como Marca de Agua --- */
+/* ===== GRÁFICO FONDO ===== */
 .marca-agua-grafico {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5; /* Por debajo del texto principal */
+  inset: 0;
+  z-index: 5;
 
-  
-  /* MEJORA 4: Capa de textura sutil */
-  /* Agregamos una textura de grano muy suave */
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%231a2c4e" fill-opacity="0.03" d="M1 3h1v1H1zM3 1h1v1H3z"/%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4"%3E%3Cpath fill="%231a2c4e" fill-opacity="0.03" d="M1 3h1v1H1zM3 1h1v1H3z"/%3E%3C/svg%3E');
 }
 
 .svg-fondo-linea {
   position: absolute;
-  bottom: 0; /* Lo movemos hacia abajo */
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Cubre el fondo */
-
-  
-  /* MEJORA 5: Opacidad muy baja */
-  /* Hacemos que la línea sea sutil, como una marca de agua */
-  opacity: 0.1; /* 10% de opacidad */
+  height: 100%;
+  opacity: 0.1;
 }
 
 .polyline-grafico {
   fill: none;
   stroke: #525967;
-  stroke-width: 4;
+  stroke-width: 2; /* reducido para móvil */
   stroke-linecap: round;
   stroke-linejoin: round;
-  /* El pathLength de framer-motion se encarga del resto */
 }
 
 .punto-grafico {
-  fill: #000000; /* Puntos del mismo color */
-  /* Puntos un poco más visibles que la línea */
-   /* Puntos un poco más visibles que la línea */
+  fill: #000000;
 }
 
-/* --- Sección del Pie de Página --- */
+/* ===== FOOTER ===== */
 .seccion-footer {
-  flex: 1 1 auto; /* Ocupa el espacio central restante */
+  flex: 1;
   display: flex;
-  align-items: flex-end; /* Lo alinea al fondo absoluto */
-  padding-bottom: 5vh; /* Espacio desde abajo */
-  position: relative;
+  align-items: flex-end;
+  padding-bottom: 4vh;
   z-index: 10;
 }
 
 .contenedor-footer-texto {
   width: 100%;
   text-align: center;
-  padding: 0 10vw; /* Espacio a los lados */
+  padding: 0 20px;
 }
 
 .portada-texto-respeto {
   color: #305275;
-  font-size: 1.3rem; /* Un poco más grande y legible */
+  font-size: 0.9rem; /* móvil */
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  line-height: 1.4;
   margin: 0;
-
-  /* MEJORA 6: Espaciado de línea más abierto */
-  line-height: 0.1;
 }
-  
-  /* MEJORA 6: Espaciado de línea más abierto */
-  line-height: 0.1;
+
+/* ===== TABLET ===== */
+@media (min-width: 768px) {
+  .portada-super-titulo {
+    font-size: 2.5rem;
+  }
+
+  .portada-titulo-foco {
+    font-size: 4.5rem;
+  }
+
+  .portada-texto-respeto {
+    font-size: 1.1rem;
+  }
+
+  .polyline-grafico {
+    stroke-width: 3;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .seccion-titulo-principal {
+    padding-top: 15vh;
+  }
+
+  .portada-super-titulo {
+    font-size: 4rem;
+  }
+
+  .portada-titulo-foco {
+    font-size: 7rem;
+  }
+
+  .contenedor-footer-texto {
+    padding: 0 10vw;
+  }
+
+  .portada-texto-respeto {
+    font-size: 1.3rem;
+  }
+
+  .polyline-grafico {
+    stroke-width: 4;
+  }
 }

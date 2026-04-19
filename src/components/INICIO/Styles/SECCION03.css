@@ -1,94 +1,84 @@
-/* SeccionSenales.css */
-
+/* ===== ROOT ===== */
 .seccion-senales-root {
   min-height: 100vh;
-  width: 100%; /* FIX: evita scroll horizontal */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: #0d2137;
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%231a2c4e" fill-opacity="0.2"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34L25 30.6V17.9l-11.01-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.31zm0 18.55L12.98 41v8h-2v-6.85L0 36.24v-2.31zm14.02 0L27 36.24v-2.31l-12.98-7.5v2.31zm0-18.55L27 12.69v-2.31L14.02 7.5v2.31z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  padding: 60px 20px; /* móvil */
+  font-family: "Poppins", sans-serif;
 
-  padding: 10vh 8vw;
-  font-family: "Poppins", sans-serif; /* FIX: ahora sí se aplica */
+  background-color: #0d2137;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49"%3E%3Cg fill="%231a2c4e" fill-opacity="0.2"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5z"/%3E%3C/g%3E%3C/svg%3E');
 }
 
+/* ===== LAYOUT ===== */
 .contenedor-flex-senales {
   display: flex;
-  align-items: center;
-  gap: 8vw;
+  flex-direction: column; /* móvil primero */
+  gap: 40px;
   max-width: 1500px;
   width: 100%;
 }
 
-/* --- Texto --- */
+/* ===== TEXTO ===== */
 .bloque-texto-controles {
-  flex: 1;
-  text-align: left;
+  text-align: center; /* mejor en móvil */
 }
 
 .titulo-senales {
   color: #fff;
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0;
 }
 
 .subtitulo-senales {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-top: -0.2em;
-  margin-bottom: 1.5em;
+  margin: 10px 0 20px;
 }
 
 .descripcion-senales {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 90%;
-  margin-bottom: 2em;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
-/* --- Controles --- */
+/* ===== CONTROLES ===== */
 .controles-carrusel {
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  gap: 12px;
 }
 
 .boton-carrusel {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.boton-carrusel:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
 }
 
 .icono-flecha {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 
-/* --- Carrusel --- */
+/* ===== CARRUSEL ===== */
 .bloque-carrusel-visual {
-  flex: 1.5;
-  height: 65vh;
+  width: 100%;
+  height: 300px; /* móvil */
   position: relative;
 }
 
@@ -96,20 +86,17 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .track-carrusel {
   display: flex;
-  width: 100%;
   height: 100%;
 }
 
 .card-carrusel-individual {
-  flex: 0 0 48%; /* FIX: solo una vez */
-  margin-right: 2%;
+  flex: 0 0 100%; /* UNA tarjeta en móvil */
   height: 100%;
-  position: relative;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -118,14 +105,6 @@
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
-
-.slide-content {
-  position: absolute;
-  inset: 0;
 }
 
 .imagen-carrusel {
@@ -134,57 +113,121 @@
   object-fit: cover;
 }
 
+/* ===== TEXTO SOBRE IMAGEN ===== */
 .capa-gradiente-carrusel {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
-  /* Aumentamos un poco la opacidad del gradiente para proteger el texto */
-  height: 50%;
+  height: 65%; /* 🔥 más cobertura */
+
   background: linear-gradient(
     to top,
-    rgba(13, 33, 55, 1) 0%, 
-    rgba(13, 33, 55, 0.8) 30%,
+    rgba(13, 33, 55, 1) 0%,
+    rgba(13, 33, 55, 0.85) 40%,
     transparent 100%
   );
-  z-index: 5;
 }
 
 .texto-imagen-carrusel {
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
-  /* Reducimos el padding para dar más espacio al texto */
-  padding: 20px; 
-  z-index: 10;
-  /* Centramos el texto para que no choque con los bordes */
-  text-align: center; 
+  padding: 20px 25px;
+  text-align: left;
   box-sizing: border-box;
 }
 
 .texto-imagen-carrusel p {
-  font-size: 1rem; /* Un tamaño más manejable */
+  font-size: 1rem;
   font-weight: 600;
-  color: #ffffff; /* Color sólido para máxima legibilidad */
-  margin: 0;
+  color: #fff;
   line-height: 1.4;
-  /* Eliminamos el degradado del texto si es muy pequeño, 
-     ya que dificulta la lectura en tarjetas */
-  background: none;
-  -webkit-text-fill-color: initial;
-  text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra más fuerte */
+  max-width: 90%;
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
+/* ===== TABLET ===== */
+@media (min-width: 768px) {
   .contenedor-flex-senales {
     flex-direction: column;
-    gap: 40px;
+    gap: 50px;
+  }
+
+  .titulo-senales {
+    font-size: 2.8rem;
+  }
+
+  .descripcion-senales {
+    font-size: 1.05rem;
+  }
+
+  .bloque-carrusel-visual {
+    height: 400px;
   }
 
   .card-carrusel-individual {
-    flex: 0 0 100%;
-    margin-right: 0;
+    flex: 0 0 70%; /* muestra parcialmente el siguiente */
+    margin-right: 20px;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .seccion-senales-root {
+    padding: 10vh 8vw;
+  }
+
+  .contenedor-flex-senales {
+    flex-direction: row; /* recién aquí lado a lado */
+    align-items: center;
+    gap: 8vw;
+  }
+
+  .bloque-texto-controles {
+    flex: 1;
+    text-align: left;
+  }
+
+  .titulo-senales {
+    font-size: 4rem;
+  }
+
+  .subtitulo-senales {
+    font-size: 1.2rem;
+  }
+
+  .descripcion-senales {
+    font-size: 1.2rem;
+    max-width: 90%;
+  }
+
+  .controles-carrusel {
+    justify-content: flex-start;
+  }
+
+  .bloque-carrusel-visual {
+    flex: 1.5;
+    height: 65vh;
+  }
+
+  .card-carrusel-individual {
+    flex: 0 0 50%;
+    margin-right: 2%;
+  }
+
+  /* hover solo en desktop */
+  .boton-carrusel:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+
+  .texto-imagen-carrusel {
+    padding: 30px;
+  }
+
+  .texto-imagen-carrusel p {
+    font-size: 1.1rem;
+    max-width: 40%;
+    /* más limpio visualmente */
   }
 }

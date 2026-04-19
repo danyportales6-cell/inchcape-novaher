@@ -1,114 +1,142 @@
-/* --- Contenedor Principal (Fondo oscuro) --- */
+/* --- CONTENEDOR PRINCIPAL (MOBILE FIRST) --- */
 .incumplimiento-section {
-  background-color: #0f172a; /* Azul oscuro corporativo como tu imagen */
-  padding: 80px 20px;
+  background-color: #0f172a;
+  padding: 10px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh; /* Ocupa buena parte de la altura de la ventana */
+  min-height: 80vh;
 }
 
-/* --- Contenedor Interno (Alineación) --- */
+/* --- CONTENEDOR INTERNO --- */
 .incumplimiento-container {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Título alineado a la izquierda */
+  align-items: center; /* mobile centrado */
 }
 
-/* --- Título Principal --- */
+/* --- TÍTULO --- */
 .incumplimiento-title {
   color: #ffffff;
-  font-size: 2.2rem; /* Tamaño grande y legible */
+  font-size: 1.4rem;
   font-weight: 800;
-  letter-spacing: 0.3rem; /* Espaciado entre letras para un look moderno */
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
-  margin-bottom: 60px; /* Separación con las tarjetas */
-  margin-left: 20px; /* Pequeño ajuste hacia la derecha */
+
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-/* --- Grid de Consecuencias --- */
+/* --- GRID (MOBILE: COLUMNAS) --- */
 .consecuencias-grid {
   display: flex;
-  justify-content: space-between; /* Distribuye las 3 tarjetas uniformemente */
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  gap: 30px; /* Espacio entre tarjetas */
+  align-items: center;
 }
 
-/* --- Estilo de Tarjeta Individual --- */
+/* --- CARD --- */
 .consecuencia-card {
-  flex: 1; /* Cada tarjeta ocupa 1/3 del ancho */
-  max-width: 400px; /* Evita que crezcan demasiado */
-  background-color: #ffffff; /* Fondo blanco sutil bajo la imagen */
-  border-radius: 4px; /* Bordes rectos según la imagen */
-  overflow: hidden; /* Mantiene la imagen y el bloque celeste dentro */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* Sombra suave para profundidad */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  width: 100%;
+  max-width: 380px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
-/* Efecto hover en la tarjeta */
 .consecuencia-card:hover {
-  transform: translateY(-10px); /* Levitación sutil */
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* --- Contenedor de Imagen --- */
+/* --- IMAGEN --- */
 .card-image-wrapper {
   width: 100%;
-  height: 250px; /* Altura fija para uniformidad */
+  height: 220px;
   overflow: hidden;
 }
 
 .card-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
-  transition: transform 0.5s ease; /* Transición para el zoom */
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-/* Efecto zoom en la imagen al hover */
 .consecuencia-card:hover .card-image {
-  transform: scale(1.08); /* Zoom sutil hacia adentro */
+  transform: scale(1.05);
 }
 
-/* --- Bloque de Texto Celeste --- */
+/* --- TEXTO --- */
 .card-text-block {
-  background-color: #cce5ff; /* Celeste claro como tu imagen */
-  color: #001530; /* Texto oscuro para contraste */
-  padding: 30px 20px; /* Espaciado interno generoso */
+  background-color: #cce5ff;
+  color: #001530;
+  padding: 24px 16px;
   text-align: center;
-  flex-grow: 1; /* Ocupa el espacio restante de la tarjeta */
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* --- Título de la Tarjeta --- */
+/* --- TITULO CARD --- */
 .card-title {
   margin: 0;
-  font-size: 1.6rem; /* Grande y claro */
+  font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.2;
 }
 
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .consecuencias-grid {
-    flex-direction: column; /* Tarjetas en columna en pantallas pequeñas */
-    align-items: center;
-  }
-  .consecuencia-card {
-    width: 90%;
-    max-width: 500px;
-  }
+/* ===================================================== */
+/* --- TABLET --- */
+@media (min-width: 768px) {
   .incumplimiento-title {
-    font-size: 1.6rem;
-    text-align: center;
-    align-self: center;
+    font-size: 1.8rem;
+  }
+
+  .consecuencias-grid {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .consecuencia-card {
+    max-width: 340px;
+  }
+}
+
+/* --- DESKTOP --- */
+@media (min-width: 1024px) {
+  .incumplimiento-section {
+    padding: 80px 20px;
+  }
+
+  .incumplimiento-title {
+    font-size: 2.2rem;
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 20px;
+  }
+
+  .consecuencias-grid {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 30px;
+  }
+
+  .consecuencia-card {
+    max-width: 400px;
   }
 }
