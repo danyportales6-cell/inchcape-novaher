@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:  10%;
+  padding: 10%;
 }
 
 .bloque-oscuro-identificar {
@@ -26,6 +26,7 @@
   letter-spacing: 5px;
   text-shadow: 0 0 15px rgb(229, 233, 238);
   transform: translate(0px, -150px);
+  padding-top: 150px;
 }
 
 .texto-identificar {
@@ -34,7 +35,6 @@
   font-weight: 600;
   margin: 7px 0 40px 0;
   transform: translate(0px, -90px);
-
 }
 
 .boton-trivia-link {
@@ -46,10 +46,11 @@
   border-radius: 12px;
   font-weight: 800;
   font-size: 1.2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border: 2px solid rgba(255, 255, 255, 0.1);
   transform: translate(0px, -70px);
-
 }
 
 .boton-trivia-link:hover {

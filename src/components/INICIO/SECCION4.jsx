@@ -1,12 +1,18 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
-import './Styles/SECCION04.css';
+import React, { useEffect, useRef } from "react";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  useInView,
+} from "framer-motion";
+import "./Styles/SECCION04.css";
 
 // --- Sub-componente del Contador con detección de vista ---
 const ContadorDePorcentaje = ({ valorFinal }) => {
   const elementoRef = useRef(null);
   const estaEnVista = useInView(elementoRef, { once: true, amount: 0.5 });
-  const count = useMotionValue(0); 
+  const count = useMotionValue(0);
   const rounded = useTransform(count, (value) => `${Math.round(value)}%`);
 
   useEffect(() => {
@@ -24,18 +30,26 @@ const ContadorDePorcentaje = ({ valorFinal }) => {
 };
 
 // --- Componente Principal ---
-const SECCION4= () => {
+const SECCION4 = () => {
   const datosEstadisticos = [
-    { id: 1, porcentaje: 41, descripcion: "Miedo a que procedimiento no fuera confidencial" },
+    {
+      id: 1,
+      porcentaje: 41,
+      descripcion: "Miedo a que procedimiento no fuera confidencial",
+    },
     { id: 2, porcentaje: 38, descripcion: "No supo cómo denunciar" },
-    { id: 3, porcentaje: 43, descripcion: "Procedimientos de investigación laboral no era claro" }
+    {
+      id: 3,
+      porcentaje: 43,
+      descripcion: "Procedimientos de investigación laboral no era claro",
+    },
   ];
 
   return (
     <section className="seccion-casos-root">
       <div className="capa-fondo-trama"></div>
 
-      <motion.div 
+      <motion.div
         className="tarjeta-estadistica"
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -44,8 +58,9 @@ const SECCION4= () => {
       >
         <div className="encabezado-tarjeta">
           <h2 className="titulo-tarjeta">CASOS SIN REPORTAR</h2>
-          <p className="subtitulo-tarjeta">
-            Razones de por qué no llegan a denunciar sufrir acoso o discriminación
+          <p className="subtitulo-tarjeta pt-20">
+            Razones de por qué no llegan a denunciar sufrir acoso o
+            discriminación
           </p>
         </div>
 
