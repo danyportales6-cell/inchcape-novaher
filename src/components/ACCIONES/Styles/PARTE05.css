@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 90vh;
   padding: 100px 20px;
 }
 
@@ -24,7 +24,7 @@
 /* Título TALLER (Efecto de texto encima) */
 .taller-title-overlay {
   position: absolute;
-  top: -65px; /* Lo sube para que sobresalga */
+  top: -15px; /* Lo sube para que sobresalga */
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
@@ -38,7 +38,7 @@
 }
 
 .taller-card:hover .taller-title-overlay {
-  top: -55px;
+  top: -20px;
   text-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -56,7 +56,7 @@
 .taller-pdf-button {
   background-color: #000000;
   color: #ffffff;
-  padding: 15px 60px;
+  padding: 20px 90px;
   border: none;
   border-radius: 50px; /* Bordes redondeados como tu imagen */
   font-size: 1.1rem;

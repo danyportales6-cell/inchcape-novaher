@@ -44,7 +44,7 @@ body {
 }
 
 .integrity-section h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-top: 60px;
   margin-left: 20px;
@@ -52,8 +52,8 @@ body {
 
 .testimonial {
   font-style: italic;
-  font-size: 1rem;
-  line-height: 2;
+  font-size: 0.99rem;
+  line-height: 1.8;
   margin: 0;
   position: relative;
   padding-left: 20px;
@@ -221,8 +221,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease; /* Transición suave para todos los cambios */
+  font-size: 0.6rem;
+  transition: all 0.3s ease; 
 }
 
 .info-box.expanded .more-info-btn {

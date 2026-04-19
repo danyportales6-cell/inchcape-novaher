@@ -23,7 +23,7 @@ const PARTE7 = () => {
     },
     {
       id: 1,
-      title: "RECURSOS/nHUMANOS",
+      title: "RECURSOS/HUMANOS",
       icon: "/RH.png",
       shortDesc: "Encargada del bienestar y relaciones laborales.",
       longDesc:
@@ -40,7 +40,7 @@ const PARTE7 = () => {
     },
     {
       id: 3,
-      title: "ÁREA DE/nCUMPLIMIENTO",
+      title: "Á.INCUMPLIMIENTO",
       icon: "/cumplimiento.png",
       shortDesc: "Supervisa que se respenten las normas internas y éticas.",
       longDesc:
