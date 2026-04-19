@@ -21,7 +21,7 @@ body, html {
   
   /* MEJORA 1: Fondo con degradado sutil */
   /* Reemplaza el color plano por un degradado para dar profundidad */
-  background: radial-gradient(circle at center, #e2f4fa 0%, #e2eeff 100%);
+  background: radial-gradient(circle at center,  #e6f3f7 0%, #e6f3f7 100%);
 }
 /* --- Sección del Título --- */
 .seccion-titulo-principal {
