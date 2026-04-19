@@ -29,8 +29,8 @@ const SECCION1 = () => {
       variants={containerVariants}>
       {/* Sección 1: El Título Principal - Ahora más grande y jerárquico */}
       <section className="seccion-titulo-principal">
-        <motion.h1 variants={itemVariants} className="portada-super-titulo">COMPROMETIDOS</motion.h1>
-        <motion.h1 values={itemVariants} className="portada-titulo-foco">CON EL CAMBIO</motion.h1>
+        <motion.h1 variants={itemVariants} className="portada-super-titulo">LO QUE ESTAMOS</motion.h1>
+        <motion.h1 values={itemVariants} className="portada-titulo-foco">CONSTRUYENDO</motion.h1>
       </section>
 
       {/* Sección 2: Marca de Agua del Gráfico (Invisible pero presente en el fondo) */}
