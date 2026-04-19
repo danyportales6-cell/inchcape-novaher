@@ -1,4 +1,4 @@
-/* --- Variables de Color (Mejoradas) --- */
+/* --- Variables de Color --- */
 :root {
   --bg-purple-dark: #663399;
   --card-purple-pale: #ffffff;
@@ -6,127 +6,107 @@
   --accent-purple: #c8ecfc;
 }
 
-/* --- Estilos Generales y Layout de la Sección --- */
+/* --- SECCIÓN (Mobile First) --- */
 .avances-section-container {
   display: flex;
-  min-height: 120vh;
-  /* Cambia este color al celeste claro que definiste en tu :root */
-  background-color: var(--accent-purple) !important;
+  min-height: 100vh;
+  background-color: var(--accent-purple);
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
-/* --- Estilos de la Tarjeta --- */
+/* --- TARJETA --- */
 .avances-card-wrapper {
+  position: relative; /* 🔥 necesario para el before */
   background-color: #1a2b3c;
-  padding: 60px;
-  width: 90%;
+  padding: 30px 20px;
+  width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
   border-radius: 20px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Fondo translúcido con efecto de vidrio */
+/* Efecto glass */
 .avances-card-wrapper::before {
   content: "";
   position: absolute;
   top: -50px;
-  left: -80px;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.1);
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 50%;
   filter: blur(50px);
 }
 
-/* --- Encabezado --- */
+/* --- HEADER --- */
 .avances-header {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 40px;
-  width: 100%; /* Asegura que el encabezado use todo el ancho */
+  width: 100%;
+  margin-bottom: 30px;
+
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinea 2026, el Título y la Línea a la izquierda */
+  align-items: flex-start;
 }
 
 .main-title {
-  background: transparent !important;
-  background-color: transparent !important;
-  display: inline-block; /* Evita que el fondo se extienda como bloque */
   margin: 0;
-  padding: 0;
   color: #ffffff;
-  top: -10px;
-  left: 5px;
-}
-
-.fuentes {
-  position: absolute;
-  top: 490px;
-  font-size: 0.9cap;
-  color: #5c8ebf;
-  font-family: "Poppins", sans-serif;
 }
 
 .year-subtitle {
-  position: relative !important; /* Cambiamos de absolute a relative */
-  display: block; /* Asegura que ocupe su propia línea */
-  margin-top: -10px !important;
+  margin-top: 5px;
   font-weight: bold;
-  font-size: 1.2rem;
-  color: #ffffff !important;
-  text-align: left; /* Lo alinea a la izquierda */
-  width: 100%; /* Ocupa el ancho disponible */
+  font-size: 1rem;
+  color: #ffffff;
 }
 
-/* Línea estilizada debajo del título */
+/* Línea */
 .title-underline {
   height: 4px;
-  width: 80px;
+  width: 60px;
   background-color: var(--accent-purple);
-  margin-top: -30px;
+  margin-top: 10px;
   border-radius: 2px;
-  margin-right: 1000px;
 }
 
-/* --- Grid de Datos y Micro-interacciones --- */
+/* --- GRID (MÓVIL: COLUMNA) --- */
 .avances-data-grid {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  gap: 40px;
   width: 100%;
-  gap: 30px;
-  margin-top: 50px;
-  margin-bottom: 70px;
+  margin-top: 30px;
 }
 
+/* ITEM */
 .avances-item {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-/* Efecto de elevación al hover */
+/* Hover suave */
 .avances-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
+/* % */
 .percent-wrapper {
   font-weight: 900;
-  font-size: 4.5rem;
+  font-size: 3rem;
   color: transparent;
   -webkit-text-stroke: 2px var(--accent-purple);
   line-height: 1;
   transition: all 0.3s ease;
 }
-/* Al hover, el porcentaje se rellena */
+
 .avances-item:hover .percent-wrapper {
   color: var(--accent-purple);
   -webkit-text-stroke: 2px transparent;
@@ -134,48 +114,71 @@
 
 .percent-number {
   display: inline-block;
-  min-width: 8.5rem;
-  font-size: 8.5rem;
-  text-align: right;
 }
 
 .percent-symbol {
-  font-size: 3rem;
-  padding-bottom: 0.8rem;
+  font-size: 2rem;
 }
 
-/* Etiquetas de Texto */
+/* TEXTO */
 .avances-label {
-  position: relative; /* Asegúrate de que no sea absolute */
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 10px;
-  max-width: 250px; /* Ajusta para que el texto rompa línea correctamente */
+  max-width: 220px;
   line-height: 1.4;
 }
 
-/* --- Animación de Entrada para la Tarjeta --- */
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+/* FUENTES (quitamos absolute roto) */
+.fuentes {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #5c8ebf;
+}
+
+/* ===================== */
+/* ===== TABLET ===== */
+/* ===================== */
+@media (min-width: 768px) {
+  .avances-card-wrapper {
+    padding: 50px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .avances-data-grid {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .percent-wrapper {
+    font-size: 4rem;
+  }
+
+  .percent-symbol {
+    font-size: 2.5rem;
   }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ===================== */
+/* ===== DESKTOP ===== */
+/* ===================== */
+@media (min-width: 1024px) {
   .avances-card-wrapper {
-    padding: 40px;
-    clip-path: none;
-    width: 85%;
+    padding: 60px;
   }
-  .avances-data-grid {
-    flex-direction: column !important;
-    gap: 40px;
-    align-items: center;
+
+  .percent-wrapper {
+    font-size: 4.5rem;
+  }
+
+  .percent-number {
+    font-size: 8rem;
+  }
+
+  .percent-symbol {
+    font-size: 5rem;
+  }
+
+  .avances-item:hover {
+    transform: translateY(-10px);
   }
 }

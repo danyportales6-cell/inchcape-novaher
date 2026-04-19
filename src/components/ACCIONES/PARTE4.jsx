@@ -91,10 +91,10 @@ const PARTE4 = () => {
       <div className="avances-card-wrapper">
         {/* Encabezado */}
         <header className="avances-header">
-          <div className="pt-10">
+          <div>
             <h2 className="main-title">Avances de Inchcape</h2>
           </div>
-          <div className="pt-20">
+          <div>
             <span className="year-subtitle">2025</span>
           </div>
           <h3 className="fuentes">CÓDIGO DE CONDUCTA/INCHCAPE</h3>

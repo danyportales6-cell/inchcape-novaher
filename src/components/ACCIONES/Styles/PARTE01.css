@@ -1,130 +1,105 @@
-/* --- Estilos Globales y Reset --- */
+/* ===== ROOT ===== */
 .inchcape-page-container {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif; /* Tipografía limpia y profesional */
+
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Fondo de la página con el patrón de rejilla sutil de la imagen */
   background-color: #e6f3f7;
   background-image:
     linear-gradient(#cfe6ee 1px, transparent 1px),
     linear-gradient(90deg, #cfe6ee 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-size: 40px 40px;
+
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
 }
 
-/* --- Contenedor Principal --- */
+/* ===== LAYOUT ===== */
 .profile-section {
   display: flex;
+  flex-direction: column; /* 🔥 móvil primero */
+  gap: 30px;
   max-width: 1200px;
   width: 100%;
-  background: transparent;
-  align-items: center;
-  gap: 60px;
+  text-align: center;
 }
 
-/* --- Lado Izquierdo: Contenedor de Imagen --- */
+/* ===== IMAGEN ===== */
 .profile-image-container {
-  flex: 0 0 45%;
   display: flex;
   justify-content: center;
 }
 
-/* Arco */
 .arched-cutout {
   width: 100%;
-  max-width: 450px;
-  height: 600px;
+  max-width: 260px;
+  height: 340px;
+
   background-color: #071525;
-  border-radius: 250px 250px 0 0;
+  border-radius: 160px 160px 0 0;
+
   overflow: hidden;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* p.inchcape*/
 .profile-photo {
   width: 90%;
-  height: auto;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  display: block;
 }
 
-/* --- Lado Derecho: Contenedor de Texto --- */
+/* ===== TEXTO ===== */
 .profile-text-container {
-  flex: 1; /* Toma el resto del espacio */
-  color: #102a43; /* Color de texto base azul oscuro */
-  padding-right: 40px;
+  color: #102a43;
 }
 
 .profile-name {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 10px 0;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-.profile-name:hover {
-  color: #00a3e0;
+  margin-bottom: 10px;
 }
 
 .profile-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin: 0 0 40px 0;
-  opacity: 0.9;
-}
-
-.profile-quote {
-  margin: 0;
-  padding: 0;
+  margin-bottom: 20px;
 }
 
 .profile-quote p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  font-weight: 400;
-  margin-bottom: 40px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
   color: #243b53;
 }
 
-/* boton*/
+/* ===== BOTÓN ===== */
 .read-more-btn {
-  background-color: transparent;
+  width: 100%;
+  padding: 12px;
+
   border: 2px solid #102a43;
+  background: transparent;
   color: #102a43;
-  padding: 22px 24px;
-  font-size: 1rem;
+
+  font-size: 0.95rem;
   font-weight: 600;
   border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.read-more-btn:hover {
-  background-color: #489ceb;
-  color: #000b0e;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(16, 42, 67, 0.3);
-}
-
-/* Animación de entrada */
+/* ===== ANIMACIONES ===== */
 .animate-fade-in-left {
   animation: fadeInLeft 1s ease-out forwards;
 }
 
-/* Animación de entrada para el texto */
 .animate-fade-in-right {
   animation: fadeInRight 1s ease-out forwards;
   animation-delay: 0.3s;
@@ -134,42 +109,134 @@
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateY(30px); /* 🔥 mejor para móvil */
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
-/* Responsividad para Pantallas Pequeñas */
-@media (max-width: 900px) {
+/* ===== TABLET ===== */
+@media (min-width: 768px) {
   .profile-section {
-    flex-direction: column; /* Apila los elementos verticalmente */
-    text-align: center;
-    gap: 40px;
+    gap: 50px;
   }
 
   .arched-cutout {
-    height: 400px;
+    max-width: 320px;
+    height: 420px;
   }
 
   .profile-name {
-    font-size: 3rem;
+    font-size: 2.8rem;
+  }
+
+  .profile-title {
+    font-size: 1.2rem;
+  }
+
+  .profile-quote p {
+    font-size: 1.1rem;
+  }
+
+  .read-more-btn {
+    width: auto;
+    padding: 14px 24px;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {
+  .inchcape-page-container {
+    padding: 40px;
+  }
+
+  .profile-section {
+    flex-direction: row; /* 🔥 recién aquí horizontal */
+    align-items: center;
+    gap: 60px;
+    text-align: left;
+  }
+
+  .profile-image-container {
+    flex: 0 0 45%;
+  }
+
+  .arched-cutout {
+    max-width: 450px;
+    height: 600px;
+    border-radius: 250px 250px 0 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
 
   .profile-text-container {
-    padding-right: 0;
+    flex: 1;
+    padding-right: 40px;
+  }
+
+  .profile-name {
+    font-size: 4rem;
+    cursor: pointer;
+  }
+
+  .profile-name:hover {
+    color: #00a3e0;
+  }
+
+  .profile-title {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+
+  .profile-quote p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+  }
+
+  .read-more-btn {
+    padding: 18px 24px;
+    transition: all 0.3s ease;
+  }
+
+  .read-more-btn:hover {
+    background-color: #489ceb;
+    color: #000b0e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(16, 42, 67, 0.3);
+  }
+
+  /* 🔥 animaciones más “laterales” solo en desktop */
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
