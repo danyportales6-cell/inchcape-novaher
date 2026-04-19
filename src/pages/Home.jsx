@@ -8,10 +8,6 @@ import PARTE6 from "../components/ACCIONES/PARTE6";
 import PARTE7 from "../components/ACCIONES/PARTE7";
 import PARTE8 from "../components/ACCIONES/PARTE8";
 import SECCION1 from "../components/INICIO/SECCION1";
-import SECCION2 from "../components/INICIO/SECCION2";
-import SECCION3 from "../components/INICIO/SECCION3";
-import SECCION4 from "../components/INICIO/SECCION4";
-import SECCION5 from "../components/INICIO/SECCION5";
 
 function Home() {
   return (
@@ -26,10 +22,6 @@ function Home() {
       }}
     >
       <SECCION1 />
-      <SECCION2 />
-      <SECCION3 />
-      <SECCION4 />
-      <SECCION5 />
       <PARTE1 />
       <PARTE2 />
       <PARTE3 />

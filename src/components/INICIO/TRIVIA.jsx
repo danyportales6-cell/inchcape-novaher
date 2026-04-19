@@ -28,6 +28,30 @@ const preguntas = [
     pregunta: "Tener una diferencia de opinión puntual con un compañero sobre un proyecto.",
     esAcoso: false,
     feedback: "Correcto. Los conflictos aislados o diferencias de opinión no son acoso."
+  },
+  {
+    id: 5,
+    pregunta: "Un compañero de trabajo te invita a salir una vez, le dices que no, y él respeta tu decisión sin insistir.",
+    esAcoso: false,
+    feedback: "Correcto. Una invitación respetuosa y no insistente no se considera acoso sexual."
+  },
+  {
+    id: 6,
+    pregunta: "Difundir rumores malintencionados sobre la vida personal de un colega para dañar su reputación.",
+    esAcoso: true,
+    feedback: "Correcto. La difamación y el aislamiento social son tácticas comunes de acoso laboral."
+  },
+  {
+    id: 7,
+    pregunta: "Tu jefe te pide realizar horas extra ocasionales por un cierre de proyecto, pagándolas según la ley.",
+    esAcoso: false,
+    feedback: "Correcto. Las exigencias laborales legítimas y legales no constituyen acoso."
+  },
+  {
+    id: 8,
+    pregunta: "Ignorar o excluir deliberadamente a una persona de reuniones importantes de su área.",
+    esAcoso: true,
+    feedback: "Correcto. La exclusión aplicada de forma sistemática es una forma de violencia psicológica."
   }
 ];
 
@@ -50,7 +74,7 @@ const TRIVIA = () => {
       } else {
         setFinalizado(true);
       }
-    }, 2000);
+    }, 2500);
   };
 
 // PANTALLA DE RESULTADOS

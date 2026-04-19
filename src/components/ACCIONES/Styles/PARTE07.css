@@ -3,7 +3,7 @@
    ========================================= */
 .orientacion-section {
   background-color: #e3f2fd; /* Azul muy claro de fondo (como la imagen) */
-  padding: 60px 20px;
+  padding: 190px 20px;
   width: 100%;
   min-height: 80vh; /* Asegura que ocupe buena parte de la pantalla */
   display: flex;

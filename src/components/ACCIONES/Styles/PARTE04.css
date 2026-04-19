@@ -9,7 +9,7 @@
 /* --- Estilos Generales y Layout de la Sección --- */
 .avances-section-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 120vh;
   /* Cambia este color al celeste claro que definiste en tu :root */
   background-color: var(--accent-purple) !important;
   align-items: center;
@@ -64,6 +64,7 @@
   top: -10px;
   left: 5px;
 }
+
 .fuentes {
   position: absolute;
   top: 490px;
@@ -71,10 +72,11 @@
   color: #5c8ebf;
   font-family: "Poppins", sans-serif;
 }
+
 .year-subtitle {
   position: relative !important; /* Cambiamos de absolute a relative */
   display: block; /* Asegura que ocupe su propia línea */
-  margin-bottom: 10px !important;
+  margin-top: -10px !important;
   font-weight: bold;
   font-size: 1.2rem;
   color: #ffffff !important;
@@ -87,7 +89,7 @@
   height: 4px;
   width: 80px;
   background-color: var(--accent-purple);
-  margin-top: 1px;
+  margin-top: -30px;
   border-radius: 2px;
   margin-right: 1000px;
 }
@@ -116,7 +118,6 @@
   transform: translateY(-10px);
 }
 
-/* Contenedor del Porcentaje */
 .percent-wrapper {
   font-weight: 900;
   font-size: 4.5rem;
@@ -125,7 +126,6 @@
   line-height: 1;
   transition: all 0.3s ease;
 }
-
 /* Al hover, el porcentaje se rellena */
 .avances-item:hover .percent-wrapper {
   color: var(--accent-purple);
@@ -146,11 +146,12 @@
 
 /* Etiquetas de Texto */
 .avances-label {
-  color: #ffff;
-  font-weight: 600;
-  margin-top: 15px;
-  font-size: 1rem;
-  max-width: 200px;
+  position: relative; /* Asegúrate de que no sea absolute */
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  max-width: 250px; /* Ajusta para que el texto rompa línea correctamente */
+  line-height: 1.4;
 }
 
 /* --- Animación de Entrada para la Tarjeta --- */
