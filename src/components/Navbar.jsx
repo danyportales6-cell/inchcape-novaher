@@ -4,16 +4,14 @@ import logo from "../assets/logo.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-
   const linkStyle = ({ isActive }) =>
     `block py-2 transition ${
       isActive
-        ? "text-cyan-400 border-b-2 border-cyan-400"
-        : "hover:text-cyan-300"
+        ? "text-cyan-400 after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:height-[2px] after:bg-cyan-400 after:shadow-[0_0_8px_#22d3ee]"
+        : "text-gray-400 hover:text-cyan-200"
     }`;
-
   return (
-    <nav className="bg-gray-900 text-white px-4 py-3 shadow-md">
+    <nav className="sticky top-0 z-50 bg-gray-900 text-white px-4 py-3 shadow-md">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
@@ -38,7 +36,7 @@ function Navbar() {
             Inicio
           </NavLink>
           <NavLink to="/acciones" className={linkStyle}>
-            Acciones
+            informandonos
           </NavLink>
           <NavLink to="/reportar" className={linkStyle}>
             Reportar
