@@ -105,7 +105,7 @@ const PARTE7 = () => {
                       className="more-info-btn"
                       onClick={(e) => openModal(card, e)}
                     >
-                      Importante &gt;
+                      IMPORTANTE &gt;
                     </button>
                   </div>
                 </div>

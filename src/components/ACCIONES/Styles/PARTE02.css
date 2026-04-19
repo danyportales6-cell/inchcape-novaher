@@ -1,7 +1,7 @@
 /* Estilos Generales y Layout Principal */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif; /* O la fuente que prefieras */
+  font-family: "Poppins", sans-serif; /* O la fuente que prefieras */
   background-color: #e6f3f7; /* Azul muy pálido de fondo general */
 }
 
@@ -23,7 +23,12 @@ body {
   position: relative;
   flex-direction: column;
   justify-content: flex-start;
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%); /* Crea el corte diagonal */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    85% 100%,
+    0% 100%
+  ); /* Crea el corte diagonal */
   z-index: 10; /* Asegura que esté sobre el fondo claro */
 }
 
@@ -33,7 +38,7 @@ body {
   letter-spacing: 1rem;
   top: 90px;
   left: 20px;
-  font-weight:900 ;
+  font-weight: 900;
   padding-right: 50px;
   z-index: 20;
 }
@@ -56,7 +61,7 @@ body {
 }
 
 .testimonial::before {
-  content: '“';
+  content: "“";
   font-size: 4rem;
   position: absolute;
   left: -20px;
@@ -87,12 +92,11 @@ body {
   position: absolute;
   border-radius: 8px; /* Opcional: bordes redondeados */
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  clip-path: polygon(0 0,85% 0, 100% 15%, 100% 100%, 0 100%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
   width: 300px;
   height: 250px;
   display: flex;
-
 }
 
 .card-container:nth-child(1) {
@@ -114,7 +118,7 @@ body {
   bottom: -30px;
   right: 90px;
 }
-.card-title-inside{
+.card-title-inside {
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
@@ -122,18 +126,18 @@ body {
   flex-shrink: 0;
   line-height: 1.2;
 }
-.card-container:has(.info-box.expanded) .floating-title{
+.card-container:has(.info-box.expanded) .floating-title {
   transform: translateY(-240px);
   color: #2a7bcc;
 }
-.text-overlay-wrapper{
+.text-overlay-wrapper {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
-  z-index:10;
+  z-index: 10;
 }
 
 .image-wrapper {
@@ -163,12 +167,12 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box; 
-  height: 60px; 
-  transition: all 0.4s cubic-bezier(0.4, 0,0.2,1);
+  box-sizing: border-box;
+  height: 60px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
-  overflow: hidden; 
+  overflow: hidden;
   z-index: 10;
 }
 
@@ -179,7 +183,7 @@ body {
 /* Estado Expandido del Recuadro Celeste (Hacia arriba) */
 .info-box.expanded {
   height: 100%; /* Se expande para cubrir toda la tarjeta */
-  background-color: #aad9f8; 
+  background-color: #aad9f8;
 }
 
 .info-box h3 {
@@ -250,7 +254,9 @@ body {
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 .fullscreen-content {
@@ -262,14 +268,16 @@ body {
   overflow: hidden;
   position: relative;
   box-shadow: 0 10px 25px rgba(39, 13, 62, 0.3);
-  
+
   /* Animación de entrada del contenido */
   transform: scale(0.9);
   animation: scaleUp 0.4s forwards ease-out;
 }
 
 @keyframes scaleUp {
-  to { transform: scale(1); }
+  to {
+    transform: scale(1);
+  }
 }
 
 .close-btn {
@@ -283,7 +291,6 @@ body {
   cursor: pointer;
   z-index: 1001;
 }
-
 
 /* Layout dentro del Fullscreen (Imagen izq, Texto der) */
 .fullscreen-layout {
@@ -309,7 +316,7 @@ body {
   flex-direction: column;
   justify-content: center;
   background-color: #e0f2fe; /* Mismo azul claro que el expandido */
-  color: #173350; 
+  color: #173350;
 }
 
 .fullscreen-text-container h2 {

@@ -5,15 +5,6 @@ import apoyo1 from "../assets/img/Apoyo1.png";
 import apoyo2 from "../assets/img/Apoyo2.png";
 import apoyo3 from "../assets/img/Apoyo3.png";
 import apoyo4 from "../assets/img/Apoyo4.png";
-import fondo1 from "../assets/img/Fondo1.jpg";
-
-// ─── DESIGN TOKENS ───────────────────────────────────────────────────────────
-// #152C47  Azul   — fondo principal, cards, overlay
-// #15BDE6  Celeste — acento primario, badges, barras, botones info
-// #BACF00  Verde  — CTA principal, progreso, highlight títulos
-// #A561AB  Lila   — acento secundario, resultados, CTA contacto
-// #D9D9D9  Gris   — texto base, bordes, superficies sutiles
-// ─────────────────────────────────────────────────────────────────────────────
 
 function ProgressBar({ progress, step, total }) {
   return (
@@ -97,7 +88,7 @@ function QuestionCard({ question, progress, stepIdx, totalSteps, onAnswer }) {
           <div className="flex items-start justify-between gap-4">
             <h2
               className="text-xl md:text-2xl font-bold leading-snug"
-              style={{ fontFamily: "'Georgia', serif" }}
+              style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               {question.text}
             </h2>
@@ -211,7 +202,7 @@ function QuestionCard({ question, progress, stepIdx, totalSteps, onAnswer }) {
               />
               <h3
                 className="font-bold text-lg mb-2 text-white"
-                style={{ fontFamily: "'Georgia', serif" }}
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 ¿Por qué te preguntamos esto?
               </h3>
@@ -292,7 +283,7 @@ function ResultCard({ resultado, onReset }) {
             </p>
             <h2
               className="text-2xl font-bold leading-tight"
-              style={{ fontFamily: "'Georgia', serif" }}
+              style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               {data.title}
             </h2>
@@ -442,7 +433,7 @@ function ResultCard({ resultado, onReset }) {
               className="flex-1 py-2.5 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
               style={{ background: "#A561AB" }}
             >
-              Contactar canal
+              Reportar caso
             </button>
           </div>
         </div>
@@ -504,7 +495,7 @@ function HowItWorksModal({ onClose }) {
           />
           <h2
             className="text-xl font-bold text-white mb-6"
-            style={{ fontFamily: "'Georgia', serif" }}
+            style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             ¿Cómo funciona?
           </h2>
@@ -551,28 +542,28 @@ const BUBBLES = [
     size: "w-[110px] h-[110px] md:w-[140px] md:h-[140px]",
     pos: "top-0 left-[5%]",
     float: { y: [0, -12, 0], duration: 4 },
-    border: "#15BDE6",
+    border: "#152C47",
   },
   {
     img: apoyo2,
     size: "w-[140px] h-[140px] md:w-[275px] md:h-[275px]",
     pos: "top-[-55px] right-0",
     float: { y: [0, -18, 0], duration: 5 },
-    border: "#A561AB",
+    border: "#152C47",
   },
   {
     img: apoyo3,
     size: "w-[90px] h-[90px] md:w-[215px] md:h-[215px]",
     pos: "bottom-0 left-[22%]",
     float: { y: [0, -10, 0], duration: 3.5 },
-    border: "#BACF00",
+    border: "#152C47",
   },
   {
     img: apoyo4,
     size: "w-[90px] h-[90px] md:w-[155px] md:h-[155px]",
     pos: "bottom-[-70px] right-[8%]",
     float: { y: [0, -14, 0], duration: 4.5 },
-    border: "#15BDE6",
+    border: "#152C47",
   },
 ];
 
@@ -669,7 +660,7 @@ function ReportesSection() {
                   <h1
                     className="text-3xl md:text-[2.6rem] font-bold leading-tight text-white"
                     style={{
-                      fontFamily: "'Georgia', serif",
+                      fontFamily: "'Poppins', sans-serif",
                       letterSpacing: "-0.02em",
                     }}
                   >

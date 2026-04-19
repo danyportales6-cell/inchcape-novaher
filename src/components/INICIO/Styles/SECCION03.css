@@ -1,0 +1,190 @@
+/* SeccionSenales.css */
+
+/* Reset sutil y fondo oscuro corporativo */
+.seccion-senales-root {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* MEJORA: Reutilizamos el fondo azul oscuro corporativo con trama */
+  background-color: #0d2137; /* Azul oscuro corporativo base */
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%231a2c4e" fill-opacity="0.2" fill-rule="nonzero"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34L25 30.6V17.9l-11.01-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.31zm0 18.55L12.98 41v8h-2v-6.85L0 36.24v-2.31zm14.02 0L27 36.24v-2.31l-12.98-7.5v2.31zm0-18.55L27 12.69v-2.31L14.02 7.5v2.31z"/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+
+  padding: 10vh 8vw;
+  font-family: "Poppins", sans-serif;
+}
+
+.contenedor-flex-senales {
+  display: flex;
+  align-items: center;
+  gap: 8vw; /* Espacio entre el texto y el carrusel */
+  max-width: 1500px;
+  width: 100%;
+}
+
+/* --- Parte Izquierda: Texto --- */
+.bloque-texto-controles {
+  flex: 1; /* Ocupa el espacio disponible */
+  text-align: left;
+}
+
+.titulo-senales {
+  color: #fff; /* Texto blanco sobre fondo oscuro */
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.subtitulo-senales {
+  color: rgba(255, 255, 255, 0.6); /* Blanco con opacidad */
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: -0.2em;
+  margin-bottom: 1.5em;
+}
+
+.descripcion-senales {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 90%;
+  margin-bottom: 2em;
+}
+
+/* --- Controles --- */
+.controles-carrusel {
+  display: flex;
+  gap: 15px;
+}
+
+.boton-carrusel {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-carrusel:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.track-carrusel {
+  display: flex;
+  width: 100%; /* El contenedor padre */
+  height: 100%;
+}
+
+.ventana-carrusel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Oculta las 4 tarjetas restantes */
+  border-radius: 20px;
+}
+
+.icono-flecha {
+  width: 24px;
+  height: 24px;
+}
+
+/* --- Parte Derecha: Carrusel --- */
+.bloque-carrusel-visual {
+  flex: 1.5; /* Ocupa el otro 50% */
+  height: 65vh; /* Alto fijo para el carrusel */
+  position: relative;
+}
+
+.contenedor-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px; /* MEJORA: Bordes redondeados modernos */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Sombra para profundidad */
+}
+
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.imagen-carrusel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+}
+
+.capa-gradiente-carrusel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%; /* El gradiente sube un poco más para legibilidad */
+  background: linear-gradient(
+    to top,
+    rgba(13, 33, 55, 0.95) 0%,
+    transparent 100%
+  );
+  z-index: 5;
+}
+
+.texto-imagen-carrusel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 10;
+  text-align: left;
+}
+
+.texto-imagen-carrusel p {
+  font-size: 1.1rem; /* Un poco más pequeño para que entre bien en 2 columnas */
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #dbeaff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.card-carrusel-individual {
+  /* MUY IMPORTANTE: Cada tarjeta ocupa exactamente la mitad del contenedor */
+  flex: 0 0 48%;
+  margin-right: 2%; /* Espacio pequeño entre tarjetas */
+  height: 100%;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Responsivo: En móviles mejor mostrar solo 1 */
+@media (max-width: 768px) {
+  .card-carrusel-individual {
+    flex: 0 0 100%; /* Ocupa todo el ancho de la ventana */
+    margin-right: 0;
+  }
+
+  .contenedor-flex-senales {
+    flex-direction: column; /* El texto arriba y el carrusel abajo */
+    gap: 40px;
+  }
+}

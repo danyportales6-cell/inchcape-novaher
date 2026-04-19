@@ -91,7 +91,7 @@ const PARTE4 = () => {
         {/* Encabezado */}
         <header className="avances-header">
           <h2 className="main-title">Avances de Inchcape</h2>
-          <span className="year-subtitle">2025/2026 ~</span>
+          <span className="year-subtitle">2025</span>
           <h3 className='fuentes'>CÓDIGO DE CONDUCTA/INCHCAPE</h3>
           <div className="title-underline"></div>
         </header>

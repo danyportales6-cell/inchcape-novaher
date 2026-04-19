@@ -102,7 +102,7 @@ const PARTE2 = () => {
                     openFullscreen(card.id);
                   }}
                 >
-                  más información &gt;
+                  MÁS INFORMACIÓN &gt;
                 </button>
                 </div>
               </div>
