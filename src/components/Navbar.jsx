@@ -32,6 +32,32 @@ function Navbar() {
           ☰
         </button>
 
+  const linkStyle = ({ isActive }) =>
+    `block py-2 transition ${
+      isActive
+        ? "text-cyan-400 after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-full after:height-[2px] after:bg-cyan-400 after:shadow-[0_0_8px_#22d3ee]"
+        : "text-gray-400 hover:text-cyan-200"
+    }`;
+  return (
+    <nav className="sticky top-0 z-50 bg-gray-900 text-white px-4 py-3 shadow-md">
+      <div className="flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-28 h-8 object-contain sm:w-36 sm:h-10"
+          />
+        </Link>
+
+        {/* Botón hamburguesa (solo móvil) */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="sm:hidden text-white text-2xl"
+        >
+          ☰
+        </button>
+
         {/* Links desktop */}
         <div className="hidden sm:flex gap-6">
           <NavLink to="/" className={linkStyle}>
@@ -39,6 +65,7 @@ function Navbar() {
           </NavLink>
           <NavLink to="/acciones" className={linkStyle}>
             Acciones
+            informandonos
           </NavLink>
           <NavLink to="/reportar" className={linkStyle}>
             Reportar
