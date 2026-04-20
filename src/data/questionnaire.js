@@ -278,7 +278,7 @@ export const RESULTS = {
       {
         label: "Código de Conducta Inchcape",
         desc: "Sección de Inclusión y Diversidad, pp. 24-27",
-        url: "https://www.inchcape.com/es-co/sostenibilidad/nuestro-enfoque/ruta-sostenible-al-mercado/pr%C3%A1cticas/marco-de-denuncias",
+        url: "https://www.inchcape.com/pdf-viewer.aspx?gid=308187638&src=%2F%7E%2Fmedia%2Ffiles%2Fi%2Finchcape%2Fcorp%2Fsustainability%2Fsustainable-route-to-market%2Fpractices%2Fcode-of-conduct%2Fcode+of+conduct+spanish.pdf",
       },
       {
         label: "SUNAFIL",
@@ -305,9 +305,9 @@ export const RESULTS = {
         url: "https://secure.ethicspoint.eu/domain/media/en/gui/104822/index.html",
       },
       {
-        label: "Marco de denuncias Inchcape",
-        desc: "inchcape.com/es-co/…/marco-de-denuncias",
-        url: "https://www.inchcape.com/es-co/sostenibilidad/nuestro-enfoque/ruta-sostenible-al-mercado/pr%C3%A1cticas/marco-de-denuncias",
+        label: "Código de Conducta Inchcape",
+        desc: "Mantente informado sobre tus derechos y los canales disponibles",
+        url: "https://www.inchcape.com/pdf-viewer.aspx?gid=308187638&src=%2F%7E%2Fmedia%2Ffiles%2Fi%2Finchcape%2Fcorp%2Fsustainability%2Fsustainable-route-to-market%2Fpractices%2Fcode-of-conduct%2Fcode+of+conduct+spanish.pdf",
       },
     ],
   },
