@@ -38,7 +38,7 @@ function Navbar() {
             Inicio
           </NavLink>
           <NavLink to="/acciones" className={linkStyle}>
-            Informandonos
+            Informándonos
           </NavLink>
           <NavLink to="/reportar" className={linkStyle}>
             Reportar
